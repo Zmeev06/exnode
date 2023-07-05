@@ -1,0 +1,46 @@
+@import "../../stylesVariables/colors.scss";
+
+.root {
+  margin-top: 100px;
+}
+
+.title {
+  font-size: 32px;
+  font-family: Roboto Flex;
+  font-weight: 700;
+  color: $lightPurpuleText;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.gridItem {
+  padding: 40px 20px;
+  border-radius: 20px;
+  border: 1px solid $btnBlue;
+  background: $greyViolet;
+}
+
+.gridTitle {
+  color: $lightViolet;
+  font-size: 24px;
+  font-family: Roboto Flex;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.gridText {
+  color: $lightPurpuleText;
+  font-size: 18px;
+  font-family: Roboto Flex;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.commissions {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}

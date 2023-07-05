@@ -4,12 +4,12 @@ import Container from "../UI/Container";
 import Header from "../Header";
 import { Outlet } from "react-router-dom";
 
-const Layout = ({}) => {
+const Layout = () => {
   return (
-    <Container>
+    <>
       <Header />
       <Outlet />
-    </Container>
+    </>
   );
 };
 export default Layout;

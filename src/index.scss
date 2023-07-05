@@ -1,5 +1,9 @@
 @import './stylesVariables/colors.scss';
 
+@font-face {
+  font-family: RobotoFlex;
+  src: url(../public/assets/fonts/RobotoFlex.ttf);
+}
 /* Reset and base styles  */
 * {
 	padding: 0px;
@@ -92,4 +96,6 @@ legend {
 
 body {
   background-color: $bg;
+	color: $white;
+  font-family: RobotoFlex;
 }

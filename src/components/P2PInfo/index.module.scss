@@ -5,6 +5,7 @@
 }
 
 .title {
+  margin-bottom: 20px;
   font-size: 32px;
   font-family: Roboto Flex;
   font-weight: 700;
@@ -13,7 +14,8 @@
 
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-gap: 20px;
 }
 
@@ -22,6 +24,27 @@
   border-radius: 20px;
   border: 1px solid $btnBlue;
   background: $greyViolet;
+
+  // Сделать анимацию
+}
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 3;
+}
+.div2 {
+  grid-area: 1 / 3 / 2 / 7;
+}
+.div3 {
+  grid-area: 1 / 7 / 2 / 10;
+}
+.div4 {
+  grid-area: 2 / 1 / 3 / 4;
+}
+.div5 {
+  grid-area: 2 / 4 / 3 / 7;
+}
+.div6 {
+  grid-area: 2 / 7 / 3 / 10;
 }
 
 .gridTitle {

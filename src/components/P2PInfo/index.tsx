@@ -8,14 +8,14 @@ const P2PInfo = () => {
       <div className={styles.root}>
         <h2 className={styles.title}>Преимущества P2P платформы</h2>
         <div className={styles.gridContainer}>
-          <div className={styles.gridItem}>
+          <div className={`${styles.gridItem} ${styles.div1}`}>
             <h3 className={styles.gridTitle}>Стоимость</h3>
             <p className={styles.gridText}>
               У вас есть возможность определить желаемую цену при покупке или
               продаже криптовалюты
             </p>
           </div>
-          <div className={`${styles.gridItem} ${styles.commissions}`}>
+          <div className={`${styles.gridItem} ${styles.div2}`}>
             <h3 className={styles.gridTitle}>Комиссии</h3>
             <p className={styles.gridText}>
               На нашем сервисе нет скрытых платежей. Мы взимаем комиссию
@@ -23,28 +23,28 @@ const P2PInfo = () => {
               единственная плата за вывод криптовалюты
             </p>
           </div>
-          <div className={styles.gridItem}>
+          <div className={`${styles.gridItem} ${styles.div3}`}>
             <h3 className={styles.gridTitle}>Безопасность</h3>
             <p className={styles.gridText}>
               Наша команда способствует честным и надежным сделкам между
               контрагентами.
             </p>
           </div>
-          <div className={styles.gridItem}>
+          <div className={`${styles.gridItem} ${styles.div4}`}>
             <h3 className={styles.gridTitle}>Способы оплаты</h3>
             <p className={styles.gridText}>
               Мы обеспечиваем поддержку широкого спектра популярных способов
               оплаты и постоянно обновляем список новыми вариантами
             </p>
           </div>
-          <div className={styles.gridItem}>
+          <div className={`${styles.gridItem} ${styles.div5}`}>
             <h3 className={styles.gridTitle}>Конфиденциальность</h3>
             <p className={styles.gridText}>
               В отличие от банковских переводов, платформы P2P не собирают
               никакой информации о покупателе и продавце
             </p>
           </div>
-          <div className={styles.gridItem}>
+          <div className={`${styles.gridItem} ${styles.div6}`}>
             <h3 className={styles.gridTitle}>Лёгкий старт</h3>
             <p className={styles.gridText}>
               После того, как вы успешно завершили процесс KYC транзакции

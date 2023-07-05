@@ -1,0 +1,73 @@
+@import "../../../stylesVariables/colors.scss";
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  width: 1100px;
+  margin-top: 23px;
+  align-items: center;
+}
+
+.summ {
+  position: relative;
+  &Text {
+    color: $lightViolet;
+  }
+  &Input {
+    width: 260px;
+    height: 46px;
+    border-radius: 6px;
+    border: 1px solid $btnBlue;
+    padding-left: 10px;
+    margin-top: 10px;
+  }
+  &Сurrency {
+    display: block;
+    position: absolute;
+    top: 42px;
+    right: 10px;
+    color: $btnBlue;
+  }
+}
+
+.filter {
+  height: 75px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.select {
+  width: 260px;
+  height: 46px;
+  border-radius: 6px;
+  border: 1px solid $btnBlue;
+  margin-top: 10px;
+  color: $lightVioletText;
+  padding-left: 10px;
+}
+
+.newOfferBtn {
+  width: 260px;
+  height: 46px;
+  background-color: $btnBlue;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .3s;
+  color: $lightViolet;
+  &:hover {
+    background-color: #ffffff00;
+    border: 1px solid $btnBlue;
+  }
+  .plus {
+    margin-right: 10px;
+  }
+}
+
+.btnBlock {
+  height: 75px;
+  display: flex;
+  align-items: flex-end;
+}

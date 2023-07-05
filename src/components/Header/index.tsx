@@ -1,17 +1,19 @@
 import React from "react";
 import styles from "./index.module.scss";
 import Container from "../UI/Container";
+import logo from '../../assets/img/header/logo.svg'
+import arrow from '../../assets/img/header/arrow.svg'
 
 const Header = () => {
   return (
     <Container>
       <div className={styles.main}>
-        <img src="/assets/img/header/logo.svg" alt="" className={styles.logo} />
+        <img src={logo} alt="" className={styles.logo} />
         <ul className={styles.nav}>
           <li className={styles.navItem}>
             <p className={styles.navItemText}>Купить криптовалюту</p>
             <img
-              src="/assets/img/header/arrow.svg"
+              src={arrow}
               alt=""
               className={styles.navItemArrow}
             />
@@ -31,7 +33,7 @@ const Header = () => {
           <li className={styles.navItem}>
             <p className={styles.navItemText}>Статьи</p>
             <img
-              src="/assets/img/header/arrow.svg"
+              src={arrow}
               alt=""
               className={styles.navItemArrow}
             />
@@ -39,7 +41,7 @@ const Header = () => {
           <li className={styles.navItem}>
             <p className={styles.navItemText}>Поддержка</p>
             <img
-              src="/assets/img/header/arrow.svg"
+              src={arrow}
               alt=""
               className={styles.navItemArrow}
             />

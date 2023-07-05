@@ -1,11 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import MainPage from "../pages/MainPage";
 import Layout from "./Layout";
-<<<<<<< Updated upstream
-=======
 import MainPage from "../pages/MainPage";
->>>>>>> Stashed changes
+
 
 function App() {
   return (

@@ -1,0 +1,13 @@
+@import '../../../stylesVariables/colors.scss';
+
+@font-face {
+  font-family: RobotoFlex;
+  src: url(../../../../public/assets/fonts/RobotoFlex.ttf);
+}
+
+.main {
+  max-width: 1440px;
+  margin: 0 auto;
+  color: $white;
+  font-family: RobotoFlex;
+}

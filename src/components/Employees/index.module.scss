@@ -1,0 +1,23 @@
+@import "../../stylesVariables/colors.scss";
+
+.root {
+  margin-top: 100px;
+}
+
+.title {
+  color: $lightVioletText;
+  font-size: 32px;
+  font-family: RobotoFlex;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.employeesFlexBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.employeesFirstBlock {
+  margin-bottom: 60px;
+}

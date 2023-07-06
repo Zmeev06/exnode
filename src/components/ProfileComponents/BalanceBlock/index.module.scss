@@ -1,0 +1,82 @@
+.topBlock {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.balanceInfo {
+  display: flex;
+  width: 151px;
+  margin-right: 50px;
+  .info {
+    margin-left: 5px;
+  }
+}
+
+.generalText {
+  font-size: 18px;
+}
+
+.generalExnode {
+  font-size: 18px;
+  color: #4172f6;
+  font-weight: 700;
+}
+
+.balanceText {
+  font-size: 26px;
+  color: rgb(65, 114, 246);
+}
+
+.mainBalance {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.currency {
+  font-size: 26px;
+  margin-left: 10px;
+}
+
+.infoBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.available,
+.frozen {
+  font-size: 12px;
+  color: #ffffff70;
+}
+
+.btnsBlock {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.img {
+  width: 22px;
+  cursor: pointer;
+}
+
+.inArrow {
+  transform: rotate(180deg);
+}
+
+.btnText {
+  color: #ffffff90;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.btnBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottomBtn {
+  margin-top: 20px;
+}

@@ -1,0 +1,25 @@
+.gridItem {
+  background-color: #131a26;
+  border: 1px solid #323d4d;
+  border-radius: 10px;
+  padding: 24px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.gridItemTitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #abbfd4;
+}
+
+.gridItemBody {
+  line-height: 24px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #4172f6;
+}

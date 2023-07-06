@@ -1,0 +1,28 @@
+.root {
+}
+
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #abbfd4;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #abbfd4;
+  max-width: 710px;
+}
+
+.bottom {
+  background-color: #323d4d;
+}

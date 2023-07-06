@@ -1,0 +1,62 @@
+@mixin displayAlignCenter {
+  display: flex;
+  align-items: center;
+}
+
+.root {
+}
+
+.title {
+  font-weight: 700;
+  font-size: 40px;
+  color: #abbfd4;
+  margin-bottom: 60px;
+}
+
+.userInfo {
+  @include displayAlignCenter;
+  gap: 18px;
+}
+
+.iconWrap {
+  width: 70px;
+  height: 70px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+}
+
+.titleInfo {
+  color: #abbfd4;
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.errorWrap {
+  display: flex;
+  gap: 14px;
+}
+
+.lastEntry {
+  height: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lastEntryTitle {
+  color: #4172f6;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.lastEntryTime {
+  color: #abbfd4;
+}

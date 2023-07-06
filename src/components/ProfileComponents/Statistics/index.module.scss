@@ -1,0 +1,17 @@
+.main {
+  margin-top: 70px;
+}
+
+.title {
+  color: #abbfd4;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+  gap: 16px;
+}

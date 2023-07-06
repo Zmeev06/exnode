@@ -1,0 +1,67 @@
+@import '../../stylesVariables/colors.scss';
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0px;
+
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  width: 750px;
+  &Item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &Arrow {
+      margin-left: 8px;
+    }
+  }
+
+}
+
+.newBlock {
+  width: 26px;
+  height: 17px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $green;
+  color: $green;
+  font-size: 8px;
+  position: absolute;
+  top: -5px;
+  right: -20px;
+  z-index: 2;
+}
+
+.newItem {
+  position: relative;
+}
+
+.loginBtn {
+  width: 110px;
+  height: 37px;
+  background-color: $purpule;
+  border: 1px solid $btnBlue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: .3s;
+  cursor: pointer;
+  &:hover {
+    background-color: #FFFFFF00;
+  }
+}
+
+.profileBtns {
+  display: flex;
+  width: 230px;
+  justify-content: space-between;
+  align-items: center;
+}

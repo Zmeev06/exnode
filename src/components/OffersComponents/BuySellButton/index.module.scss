@@ -1,0 +1,44 @@
+@import '../../../stylesVariables/colors.scss';
+
+.main {
+  background-color: $greyViolet;
+  width: 300px;
+  height: 60px;
+  border-radius: 20px;
+  border: 1px solid $btnBlue;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 130px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s;
+  &:hover {
+    color: $green;
+    border: 1px solid $green;
+  }
+}
+
+.buyActive {
+  background-color: $green;
+  &:hover {
+    color: $white;
+    border: none;
+  }
+}
+
+.sellActive {
+  background-color: $green;
+  &:hover {
+    color: $white;
+    border: none;
+  }
+}

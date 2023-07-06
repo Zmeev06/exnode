@@ -1,0 +1,40 @@
+@import '../../stylesVariables/colors.scss'
+;
+.bg {
+  background: url('../../assets/img/bg.jpg') 50%/cover no-repeat;
+  height: 274px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: $lightPurpule;
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.text {
+  color: $lightPurpuleText;
+  margin-top: 16px;
+  font-size: 18px;
+}
+
+.promotion {
+  width: 100vw;
+  color: $lightPurpuleText;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  background-color: $btnBlue;
+  font-size: 18px;
+}

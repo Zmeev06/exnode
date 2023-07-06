@@ -1,0 +1,36 @@
+.main {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 14px;
+  color: #FFFFFF70;
+}
+
+.value {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.timer {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 16px 4px rgba(114, 184, 238, 0.2);
+}
+
+.timerText {
+  position: absolute;
+  top: 26px;
+  left: 14px;
+}
+
+.timerBlock {
+  position: relative;
+}

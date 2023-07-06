@@ -1,39 +1,52 @@
 import React, { useEffect, useState } from "react";
-import InfoBlock from "../../components/PaymentComponents/InfoBLock";
+import { getOrderInfo } from "../../services/paymentService";
+import { IOrderInfo, IProfile } from "../../interfaces/serviceInterfaces";
 import styles from "./index.module.scss";
+import InfoBlock from "../../components/PaymentComponents/InfoBLock";
 import Steps from "../../components/PaymentComponents/Steps";
 import PayBlock from "../../components/PaymentComponents/PayBlock";
 import Chat from "../../components/PaymentComponents/Chat";
-import { getOrderInfo } from "../../services/paymentService";
-import { IOrderInfo } from "../../interfaces/serviceInterfaces";
+import { getProfile } from "../../services/profileServices";
 
-const Payment = () => {
+const PaymentPage = () => {
   const [orderInfo, setOrderInfo] = useState<IOrderInfo | null>();
+  const [userInfo, setUserInfo] = useState<IProfile | null>()
   const token = localStorage.getItem("token") || "";
+  console.log(token)
   const getOrderInformation = async () => {
     const { data } = await getOrderInfo(token.replace(/"/g, ""), 1);
     setOrderInfo(data);
-    console.log(data)
   };
+
+  const getUserName = async() => {
+    const { data } = await getProfile(token);
+    setUserInfo(data)
+  }
 
   const time = new Date(orderInfo?.data.created_at || "");
   const currentTime = `${time.getDate()}.${time.getMonth()}.${time.getFullYear()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
 
   useEffect(() => {
-    getOrderInformation()
-  }, [])
+    getOrderInformation();
+    getUserName()
+  }, []);
 
   return (
     <div className={styles.main}>
       <div className={styles.leftBlock}>
-        <InfoBlock id={orderInfo?.data.id || 1} time={currentTime}/>
+        <InfoBlock time={currentTime} />
         <Steps />
-        <PayBlock sum={orderInfo?.data.sum || '0'} paymentMethod={orderInfo?.data.payment_method || 0} requisites={orderInfo?.data.requisites || ''} price={orderInfo?.data.price || '0'}/>
+        <PayBlock
+          sum={orderInfo?.data.sum || "0"}
+          paymentMethod={orderInfo?.data.payment_method || 0}
+          requisites={orderInfo?.data.requisites || ""}
+          price={orderInfo?.data.price || "0"}
+        />
       </div>
       <div className={styles.rightBlock}>
-        <Chat />
+        <Chat myName={userInfo?.data.login || ''}/>
       </div>
     </div>
   );
 };
-export default Payment;
+export default PaymentPage;

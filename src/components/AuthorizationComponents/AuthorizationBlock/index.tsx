@@ -3,16 +3,36 @@ import styles from "./index.module.scss";
 import Login from "../Login";
 import Register from "../Register";
 
-const AuthorizationBlock = () => {
-  const [authType, setAuthType] = useState("loginw");
+interface AuthorizationBlockProps {
+  openModal: boolean;
+  setOpenModal: (openModal: boolean) => void;
+  setStatus: (status: boolean) => void;
+}
+
+const AuthorizationBlock = ({
+  openModal,
+  setOpenModal,
+  setStatus
+}: AuthorizationBlockProps) => {
+  const [authType, setAuthType] = useState("login");
   return (
-    <div className={styles.root}>
-      {authType === "login" ? (
-        <Login setAuthType={setAuthType} />
-      ) : (
-        <Register setAuthType={setAuthType} />
+    <>
+      {openModal && (
+        <>
+          <div
+            className={styles.main}
+            onClick={() => setOpenModal(false)}
+          ></div>
+          <div className={styles.root}>
+            {authType === "login" ? (
+              <Login setAuthType={setAuthType} setOpenModal={setOpenModal} setStatus={setStatus}/>
+            ) : (
+              <Register setAuthType={setAuthType} setOpenModal={setOpenModal} />
+            )}
+          </div>
+        </>
       )}
-    </div>
+    </>
   );
 };
 export default AuthorizationBlock;

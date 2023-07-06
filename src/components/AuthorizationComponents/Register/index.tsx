@@ -3,21 +3,31 @@ import styles from "./index.module.scss";
 import cross from "../../../assets/icons/cross.svg";
 import Input from "../../UI/Input";
 import { v4 } from "uuid";
+import { userRegister } from "../../../services/profileServices";
 
 interface RegisterProps {
   setAuthType: (str: string) => void;
+  setOpenModal: (openModal: boolean) => void;
 }
 
-const Register = ({ setAuthType }: RegisterProps) => {
+const Register = ({ setAuthType, setOpenModal }: RegisterProps) => {
   const [login, setLogin] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const userReg = async () => {
+    const { data } = await userRegister(password, login, email);
+  };
   return (
     <div className={styles.root}>
       <div className={styles.topBlock}>
         <p className={styles.title}>Регистрация</p>
-        <img src={cross} alt="" className={styles.cross} />
+        <img
+          src={cross}
+          alt=""
+          className={styles.cross}
+          onClick={() => setOpenModal(false)}
+        />
       </div>
       <div className={styles.warning}>
         <p className={styles.warningText}>
@@ -54,9 +64,19 @@ const Register = ({ setAuthType }: RegisterProps) => {
         </span>
       </div>
       <div>
-        <button className={styles.authBtn}>Регистрация</button>
+        <button
+          className={styles.authBtn}
+          onClick={() => {
+            userReg();
+            setOpenModal(false);
+          }}
+        >
+          Регистрация
+        </button>
       </div>
-      <div className={styles.switchAuth}>Авторизоваться</div>
+      <div className={styles.switchAuth} onClick={() => setAuthType("login")}>
+        Авторизоваться
+      </div>
     </div>
   );
 };

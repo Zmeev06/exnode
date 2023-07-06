@@ -3,7 +3,7 @@
 .root {
   width: 300px;
   border-right: 6px solid transparent;
-  height: 100vw;
+  height: fit-content;
   padding: 10px 0;
   gap: 20px;
   border-radius: 20px;
@@ -40,12 +40,11 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  // padding-right: 0;
   margin-bottom: 10px;
   gap: 6px;
   cursor: pointer;
-
   border-radius: 4px;
+  transition: 0.2s;
 
   &Title {
     color: $lightPurpuleText;
@@ -60,7 +59,7 @@
 }
 
 .sidebarItemsActive {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: $profileBg;
 }
 
 .imgWrap {

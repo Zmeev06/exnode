@@ -7,6 +7,7 @@ import ProfileBottom from "../../components/ProfileComponents/ProfileBottom";
 import { IProfile } from "../../interfaces/serviceInterfaces";
 import { getProfile } from "../../services/profileServices";
 import Sidebar from "../../components/Sidebar";
+import PaymentMethod from "../../components/ProfileComponents/PaymentMethod";
 
 const Profile = () => {
   const [profile, setProfile] = useState<IProfile | null>();
@@ -28,7 +29,8 @@ const Profile = () => {
         <ProfileTop name={profile?.data.login || ""} />
         <OveralBalance balance={profile?.data.balance_usdt || 0} />
         <Statistics />
-        <ProfileBottom />
+        <PaymentMethod />
+        {/* <ProfileBottom /> */}
       </div>
     </div>
   );

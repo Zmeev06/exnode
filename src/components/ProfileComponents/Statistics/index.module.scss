@@ -1,12 +1,15 @@
+@import "../../../stylesVariables/colors.scss";
+
 .main {
-  margin-top: 70px;
+  margin-top: 10px;
 }
 
 .title {
-  color: #abbfd4;
-  font-weight: 700;
   font-size: 20px;
   margin-bottom: 20px;
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-weight: 600;
 }
 
 .gridContainer {

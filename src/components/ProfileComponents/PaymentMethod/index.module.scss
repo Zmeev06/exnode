@@ -1,11 +1,14 @@
+@import "../../../stylesVariables/colors.scss";
+
 .root {
+  margin-top: 40px;
 }
 
 .title {
-  font-weight: 500;
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
   font-size: 20px;
-  line-height: 24px;
-  color: #abbfd4;
+  font-weight: 600;
 }
 
 .content {
@@ -16,13 +19,10 @@
 }
 
 .text {
+  margin: 14px 0;
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 18px;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  color: #abbfd4;
-  max-width: 710px;
-}
-
-.bottom {
-  background-color: #323d4d;
+  line-height: 145%;
 }

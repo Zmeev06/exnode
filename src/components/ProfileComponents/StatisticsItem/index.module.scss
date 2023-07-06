@@ -1,25 +1,31 @@
+@import "../../../stylesVariables/colors.scss";
+
 .gridItem {
-  background-color: #131a26;
-  border: 1px solid #323d4d;
-  border-radius: 10px;
-  padding: 24px;
+  padding: 10px;
+  height: 110px;
   gap: 6px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+
+  border-radius: 6px;
+  border: 1px solid $btnBlue;
+  background-color: $greyViolet;
 }
 
 .gridItemTitle {
-  font-weight: 500;
-  font-size: 16px;
   line-height: 24px;
-  color: #abbfd4;
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .gridItemBody {
-  line-height: 24px;
-  font-weight: 700;
   font-size: 18px;
-  color: #4172f6;
+  color: $lightViolet;
+  font-family: RobotoFlex;
+  font-weight: 400;
+  line-height: 145%;
 }

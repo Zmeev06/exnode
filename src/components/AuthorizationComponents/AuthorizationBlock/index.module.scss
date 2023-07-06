@@ -1,0 +1,29 @@
+@import "../../../stylesVariables/colors.scss";
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background-color: #2b243770;
+  top: 0px;
+  z-index: 3;
+}
+
+.root {
+  background-color: $bg;
+  width: 400px;
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  div,
+  input {
+    margin-top: 20px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

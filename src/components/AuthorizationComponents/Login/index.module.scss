@@ -48,6 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  display: none;
 }
 
 .checkbox {
@@ -64,4 +65,25 @@
   font-family: RobotoFlex;
   font-weight: 400;
   line-height: 22px;
+}
+
+.authBtn {
+  display: flex;
+  width: 260px;
+  height: 40px;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: $btnBlue;
+  margin: 0 auto;
+}
+
+.switchAuth {
+  color: $btnBlue;
+  text-align: center;
+  font-family: RobotoFlex;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
 }

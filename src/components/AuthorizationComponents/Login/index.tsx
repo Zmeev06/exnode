@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./index.module.scss";
 import cross from "../../../assets/icons/cross.svg";
 import Input from "../../UI/Input";
-import Checkbox from "../../UI/Checkbox";
 
 interface LoginProps {
   setAuthType: (str: string) => void;
@@ -26,9 +25,12 @@ const Login = ({ setAuthType }: LoginProps) => {
         <Input type="password" placeholder="Пароль" />
       </div>
       <div className={styles.help}>
-        <Checkbox text="Запомнить меня" className={styles.checkbox} />
         <span className={styles.helpPassword}>Забыли пароль?</span>
       </div>
+      <div>
+        <button className={styles.authBtn}>Авторизоваться</button>
+      </div>
+      <div className={styles.switchAuth}>Регистрация</div>
     </div>
   );
 };

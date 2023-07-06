@@ -4,14 +4,13 @@ import styles from "./index.module.scss";
 // import ContentBlock from "../../UI/ContentBlock";
 // import TextButton from "../../UI/TextButton";
 
-
 interface PayBlockProps {
-  sum:string;
+  sum: string;
   price: string;
   requisites: string;
-  paymentMethod: number
+  paymentMethod: number;
 }
-const PayBlock = ({sum, price, requisites, paymentMethod}: PayBlockProps) => {
+const PayBlock = ({ sum, price, requisites, paymentMethod }: PayBlockProps) => {
   return (
     <div className={styles.main}>
       <p className={styles.title}>Подтвердите информацию об ордере</p>
@@ -48,8 +47,12 @@ const PayBlock = ({sum, price, requisites, paymentMethod}: PayBlockProps) => {
         </div>
       </div>
       <div className={styles.btnsBlock}>
-        {/* <TextButton text="Оплачено" width={250} /> */}
-        <p className={styles.reset}>Отменить ордер</p>
+        <div className={styles.btn}>
+          <p className={styles.btnText}>Оплачено</p>
+        </div>
+        <div className={styles.resetBlock}>
+          <p className={styles.reset}>Отменить ордер</p>
+        </div>
       </div>
     </div>
   );

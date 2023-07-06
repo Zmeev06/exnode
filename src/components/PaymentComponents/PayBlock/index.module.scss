@@ -1,15 +1,18 @@
+@import "../../../stylesVariables/colors.scss";
+
 .main {
-  width: 600px;
+  width: 832px;
   margin-top: 40px;
   padding: 28px 16px;
-  background-color: #1d2532;
+  background-color: rgba(41, 20, 75, 0.7);
   box-shadow: 0 2px 14px rgba(9, 42, 98, 0.12);
   border-radius: 10px;
-  width: fit-content;
+  border: 1px solid $btnBlue;
 }
 
 .title {
-  font-size: 16px;
+  font-size: 20px;
+  color: $lightVioletText;
 }
 
 .orderInfo {
@@ -20,7 +23,7 @@
 
 .orderTitle {
   font-size: 12px;
-  color: #FFFFFF70;
+  color: #ffffff70;
   margin-bottom: 7px;
 }
 
@@ -44,12 +47,12 @@
 
 .sallerTitle {
   font-size: 14px;
-  color: #FFFFFF70;
+  color: #ffffff70;
   margin-bottom: 7px;
 }
 
 .saller {
-  border-left: 1px solid #FFFFFF70;
+  border-left: 1px solid #ffffff70;
   padding-left: 50px;
 }
 
@@ -57,10 +60,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 400px;
 }
 
 .reset {
-  color: #FFFFFF70;
+  color: #ffffff70;
   cursor: pointer;
+  &Block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+  }
+}
+
+.btn {
+  height: 40px;
+  width: 386px;
+  background-color: $btnBlue;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: #ffffff00;
+    border: 1px solid $btnBlue;
+  }
 }

@@ -1,48 +1,54 @@
 import React, { useState } from "react";
 import styles from "./index.module.scss";
-import UserIcon from "../../../assets/profile/userIcon.svg";
-import WalletIcon from "../../../assets/profile/walletIcon.svg";
-import BookIcon from "../../../assets/profile/bookIcon.svg";
-import ShieldIcon from "../../../assets/profile/shieldIcon.svg";
-import LockIcon from "../../../assets/profile/lockIcon.svg";
-import SettingsIcon from "../../../assets/profile/settingsIcon.svg";
-import ReferralIcon from "../../../assets/profile/referralIcon.svg";
 import { Link } from "react-router-dom";
+import UserIcon from "../../assets/icons/profile/sidebar/1_profile.svg";
+import WalletIcon from "../../assets/icons/profile/sidebar/2_wallet.svg";
+import BookIcon from "../../assets/icons/profile/sidebar/3_book.svg";
+import ShieldIcon from "../../assets/icons/profile/sidebar/4_protection.svg";
+import LockIcon from "../../assets/icons/profile/sidebar/5_lock.svg";
+import ReferralIcon from "../../assets/icons/profile/sidebar/6_gift.svg";
+import ForkIcon from "../../assets/icons/profile/sidebar/7_fork.svg";
+import SettingsIcon from "../../assets/icons/profile/sidebar/8_settings.svg";
 
 const sidebarItems = [
   {
-    // icon: UserIcon,
+    icon: UserIcon,
     title: "Профиль",
     route: "/profile",
   },
   {
-    // icon: WalletIcon,
+    icon: WalletIcon,
     title: "Кошелек",
     route: "/profile",
   },
   {
-    // icon: BookIcon,
+    icon: BookIcon,
     title: "История",
     route: "/profile",
   },
   {
-    // icon: ShieldIcon,
+    icon: ShieldIcon,
     title: "Безопастность",
     route: "/profile",
   },
   {
-    // icon: LockIcon,
+    icon: LockIcon,
     title: "Верификация",
     route: "/profile",
   },
   {
-    // icon: SettingsIcon,
-    title: "Настройки",
+    icon: ReferralIcon,
+    title: "Реферальная программа",
     route: "/profile",
   },
   {
-    // icon: ReferralIcon,
-    title: "Реферальная программа",
+    icon: ForkIcon,
+    title: "P2P-связки",
+    route: "/profile",
+  },
+  {
+    icon: SettingsIcon,
+    title: "Настройки",
     route: "/profile",
   },
 ];
@@ -66,9 +72,7 @@ const Sidebar = () => {
             }`}
             key={index}
           >
-            <div className={styles.imgWrap}>
-              {/* <img src={el.icon} alt="" /> */}
-            </div>
+            <img src={el.icon} alt="" />
             <h3 className={styles.sidebarItemsTitle}>{el.title}</h3>
           </Link>
         ))}

@@ -1,26 +1,35 @@
+@import "../../stylesVariables/colors.scss";
+
 .root {
-  background-color: #1d2532;
   width: 300px;
-  border-right: 1px solid #909090;
+  border-right: 6px solid transparent;
   height: 100vw;
+  padding: 10px 0;
+  gap: 20px;
+  border-radius: 20px;
+  background-color: $greyViolet;
 }
 
 .top {
-  padding: 20px;
+  padding: 0 10px 20px;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
 .title {
-  font-weight: 500;
   font-size: 24px;
+  color: $lightViolet;
+  font-family: RobotoFlex;
+  font-weight: 700;
 }
 
 .email {
-  color: #4172f6;
-  font-weight: 500;
-  font-size: 20px;
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 145%;
 }
 
 .sidebarItemContainer {
@@ -30,19 +39,23 @@
 .sidebarItems {
   display: flex;
   align-items: center;
-  padding: 12px 20px;
-  gap: 8px;
+  padding: 10px;
+  // padding-right: 0;
+  margin-bottom: 10px;
+  gap: 6px;
   cursor: pointer;
 
+  border-radius: 4px;
+
   &Title {
-    margin-left: 10px;
-    font-weight: 500;
-    font-size: 16px;
-    color: #abbfd4;
+    color: $lightPurpuleText;
+    font-family: RobotoFlex;
+    font-size: 18px;
+    font-weight: 600;
   }
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: $profileBg;
   }
 }
 

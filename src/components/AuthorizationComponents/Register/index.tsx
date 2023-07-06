@@ -1,11 +1,11 @@
-import React from 'react'
-import styles from './index.module.scss'
+import React from "react";
+import styles from "./index.module.scss";
 
-const Register = ({}) => {
-  return (
-    <div>
-      
-    </div>
-)
+interface RegisterProps {
+  setAuthType: (str: string) => void;
 }
-export default Register
+
+const Register = ({ setAuthType }: RegisterProps) => {
+  return <div>Register</div>;
+};
+export default Register;

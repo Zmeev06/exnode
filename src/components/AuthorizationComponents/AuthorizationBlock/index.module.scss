@@ -1,0 +1,19 @@
+@import "../../../stylesVariables/colors.scss";
+
+.root {
+  background-color: $bg;
+  width: 400px;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  div,
+  input {
+    margin-top: 20px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

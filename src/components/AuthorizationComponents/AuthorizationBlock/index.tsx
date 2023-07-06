@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
-import styles from './index.module.scss'
-import Login from '../Login'
-import Register from '../Register'
+import React, { useState } from "react";
+import styles from "./index.module.scss";
+import Login from "../Login";
+import Register from "../Register";
 
 const AuthorizationBlock = () => {
-  const [authType, setAuthType] = useState('login')
+  const [authType, setAuthType] = useState("login");
   return (
-    <div className={styles.main}>
-      {authType === 'login' ? <Login /> : <Register />}
+    <div className={styles.root}>
+      {authType === "login" ? (
+        <Login setAuthType={setAuthType} />
+      ) : (
+        <Register setAuthType={setAuthType} />
+      )}
     </div>
-)
-}
-export default AuthorizationBlock
+  );
+};
+export default AuthorizationBlock;

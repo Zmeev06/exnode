@@ -1,6 +1,12 @@
 @import "../../../stylesVariables/colors.scss";
 
+.root {
+  position: relative;
+  width: 100%;
+}
+
 .inp {
+  width: 100%;
   padding: 10px;
   border-radius: 6px;
   border: 1px solid $btnBlue;
@@ -11,4 +17,12 @@
     font-family: RobotoFlex;
     font-weight: 400;
   }
+}
+
+.eyeSvg {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }

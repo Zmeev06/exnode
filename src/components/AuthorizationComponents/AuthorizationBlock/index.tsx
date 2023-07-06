@@ -4,7 +4,7 @@ import Login from "../Login";
 import Register from "../Register";
 
 const AuthorizationBlock = () => {
-  const [authType, setAuthType] = useState("login");
+  const [authType, setAuthType] = useState("loginw");
   return (
     <div className={styles.root}>
       {authType === "login" ? (

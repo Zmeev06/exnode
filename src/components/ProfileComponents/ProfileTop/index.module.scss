@@ -1,3 +1,5 @@
+@import "../../../stylesVariables/colors.scss";
+
 @mixin displayAlignCenter {
   display: flex;
   align-items: center;
@@ -7,10 +9,12 @@
 }
 
 .title {
-  font-weight: 700;
-  font-size: 40px;
-  color: #abbfd4;
-  margin-bottom: 60px;
+  margin-bottom: 9px;
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: normal;
 }
 
 .userInfo {
@@ -32,11 +36,12 @@
 }
 
 .titleInfo {
-  color: #abbfd4;
-  font-weight: 700;
-  font-size: 24px;
   margin-bottom: 15px;
   cursor: pointer;
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .errorWrap {

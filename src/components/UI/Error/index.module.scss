@@ -1,10 +1,19 @@
+@import "../../../stylesVariables/colors.scss";
+
 .root {
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: #1d2532;
-  color: #4172f6;
   padding: 4px 6px;
   border-radius: 5px;
   cursor: pointer;
+
+  background-color: $profileBg;
+  span {
+    color: $lightViolet;
+    font-family: RobotoFlex;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 120%;
+  }
 }

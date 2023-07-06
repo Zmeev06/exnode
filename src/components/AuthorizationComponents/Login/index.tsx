@@ -11,15 +11,15 @@ interface LoginProps {
 }
 
 const Login = ({ setAuthType, setOpenModal, setStatus }: LoginProps) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("2015nekitciti@gmail.com");
+  const [password, setPassword] = useState("Qwerty1234");
   const [requestStatus, setRequestStatus] = useState();
 
   const userLoginFunc = async () => {
     const { data, status } = await userLogin(password, email);
     setRequestStatus(status);
-    status && localStorage.setItem("token", data.token) 
-    status && setStatus(true)
+    status && localStorage.setItem("token", data.token);
+    status && setStatus(true);
   };
   return (
     <div className={styles.root}>

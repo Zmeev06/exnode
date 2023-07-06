@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.module.scss";
-import { ReactComponent as CloseIcon } from "../../../../assets/profile/closeIcon.svg";
+import { ReactComponent as ErrorIcon } from "../../../assets/icons/profile/errorIcon.svg";
 
 interface ErrorProps {
   title: string;
@@ -9,7 +9,7 @@ interface ErrorProps {
 const Error = ({ title }: ErrorProps) => {
   return (
     <div className={styles.root}>
-      <CloseIcon />
+      <ErrorIcon />
       <span>{title}</span>
     </div>
   );

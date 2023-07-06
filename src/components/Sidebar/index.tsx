@@ -11,37 +11,37 @@ import { Link } from "react-router-dom";
 
 const sidebarItems = [
   {
-    icon: UserIcon,
+    // icon: UserIcon,
     title: "Профиль",
     route: "/profile",
   },
   {
-    icon: WalletIcon,
+    // icon: WalletIcon,
     title: "Кошелек",
     route: "/profile",
   },
   {
-    icon: BookIcon,
+    // icon: BookIcon,
     title: "История",
     route: "/profile",
   },
   {
-    icon: ShieldIcon,
+    // icon: ShieldIcon,
     title: "Безопастность",
     route: "/profile",
   },
   {
-    icon: LockIcon,
+    // icon: LockIcon,
     title: "Верификация",
     route: "/profile",
   },
   {
-    icon: SettingsIcon,
+    // icon: SettingsIcon,
     title: "Настройки",
     route: "/profile",
   },
   {
-    icon: ReferralIcon,
+    // icon: ReferralIcon,
     title: "Реферальная программа",
     route: "/profile",
   },
@@ -67,7 +67,7 @@ const Sidebar = () => {
             key={index}
           >
             <div className={styles.imgWrap}>
-              <img src={el.icon} alt="" />
+              {/* <img src={el.icon} alt="" /> */}
             </div>
             <h3 className={styles.sidebarItemsTitle}>{el.title}</h3>
           </Link>

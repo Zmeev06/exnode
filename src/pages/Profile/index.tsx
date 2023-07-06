@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./index.module.scss";
-import ProfileTop from "../../components/Profile/ProfileTop";
-import OveralBalance from "../../components/Profile/OverallBalance";
-import Statistics from "../../components/Profile/Statistics";
-import ProfileBottom from "../../components/Profile/ProfileBottom";
+import ProfileTop from "../../components/ProfileComponents/ProfileTop";
+import OveralBalance from "../../components/ProfileComponents/OverallBalance";
+import Statistics from "../../components/ProfileComponents/Statistics";
+import ProfileBottom from "../../components/ProfileComponents/ProfileBottom";
 import { IProfile } from "../../interfaces/serviceInterfaces";
 import { getProfile } from "../../services/profileServices";
+import Sidebar from "../../components/Sidebar";
 
 const Profile = () => {
   const [profile, setProfile] = useState<IProfile | null>();
@@ -22,10 +23,13 @@ const Profile = () => {
 
   return (
     <div className={styles.root}>
-      <ProfileTop name={profile?.data.login || ""} />
-      <OveralBalance balance={profile?.data.balance_usdt || 0} />
-      <Statistics />
-      <ProfileBottom />
+      <Sidebar />
+      <div className={styles.main}>
+        <ProfileTop name={profile?.data.login || ""} />
+        <OveralBalance balance={profile?.data.balance_usdt || 0} />
+        <Statistics />
+        <ProfileBottom />
+      </div>
     </div>
   );
 };

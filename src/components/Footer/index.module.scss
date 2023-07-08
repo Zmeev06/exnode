@@ -1,0 +1,72 @@
+@import "../../stylesVariables/colors.scss";
+
+.root {
+  margin-top: 100px;
+  display: flex;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+
+  svg {
+    margin-right: 11px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.emailBlock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 23px;
+
+  span {
+    color: $lightPurpuleText;
+    font-family: RobotoFlex;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.right {
+  margin-top: 18px;
+  color: $lightViolet;
+  font-family: RobotoFlex;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.grid {
+  width: 68%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-left: auto;
+
+  &Title {
+    color: $lightViolet;
+    font-family: RobotoFlex;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  &Text {
+    color: $lightVioletText;
+    font-family: RobotoFlex;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

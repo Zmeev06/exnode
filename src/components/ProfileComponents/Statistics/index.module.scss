@@ -1,0 +1,20 @@
+@import "../../../stylesVariables/colors.scss";
+
+.main {
+  margin-top: 10px;
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-weight: 600;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+  gap: 16px;
+}

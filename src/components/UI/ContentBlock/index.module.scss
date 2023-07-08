@@ -1,0 +1,10 @@
+@import "../../../stylesVariables/colors.scss";
+
+.main {
+  padding: 10px;
+  border-radius: 10px;
+  width: fit-content;
+
+  border: 1px solid $btnBlue;
+  background-color: $profileBg;
+}

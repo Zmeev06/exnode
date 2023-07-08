@@ -1,0 +1,18 @@
+@import "../../../stylesVariables/colors.scss";
+
+.main {
+  text-align: center;
+  background-color: $btnBlue;
+  border-radius: 10px;
+  line-height: 24px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+
+  p {
+    color: $lightPurpuleText;
+    font-family: RobotoFlex;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}

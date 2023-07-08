@@ -1,0 +1,73 @@
+@import "../../stylesVariables/colors.scss";
+
+.root {
+  width: 300px;
+  border-right: 6px solid transparent;
+  height: fit-content;
+  padding: 10px 0;
+  gap: 20px;
+  border-radius: 20px;
+  background-color: $greyViolet;
+}
+
+.top {
+  padding: 0 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.title {
+  font-size: 24px;
+  color: $lightViolet;
+  font-family: RobotoFlex;
+  font-weight: 700;
+}
+
+.email {
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 145%;
+}
+
+.sidebarItemContainer {
+  gap: 8px;
+}
+
+.sidebarItems {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  gap: 6px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.2s;
+
+  &Title {
+    color: $lightPurpuleText;
+    font-family: RobotoFlex;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &:hover {
+    background-color: $profileBg;
+  }
+}
+
+.sidebarItemsActive {
+  background-color: $profileBg;
+}
+
+.imgWrap {
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #131a26;
+}

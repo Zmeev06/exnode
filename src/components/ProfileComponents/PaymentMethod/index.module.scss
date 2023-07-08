@@ -1,0 +1,28 @@
+@import "../../../stylesVariables/colors.scss";
+
+.root {
+  margin-top: 40px;
+}
+
+.title {
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text {
+  margin: 14px 0;
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 145%;
+}

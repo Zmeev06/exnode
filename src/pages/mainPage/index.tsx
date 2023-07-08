@@ -5,6 +5,7 @@ import P2PInfo from "../../components/P2PInfo";
 import Employees from "../../components/Employees";
 import Trade from "../../components/Trade";
 import TGBot from "../../components/TGBot";
+import FAQs from "../../components/FAQs";
 
 const MainPage = () => {
   return (
@@ -15,6 +16,7 @@ const MainPage = () => {
       <Employees />
       <Trade />
       <TGBot />
+      <FAQs />
     </div>
   );
 };

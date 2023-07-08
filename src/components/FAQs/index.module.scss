@@ -1,0 +1,83 @@
+@import "../../stylesVariables/colors.scss";
+
+.root {
+  margin-top: 100px;
+}
+
+.title {
+  color: $lightPurpuleText;
+  text-align: center;
+  font-family: RobotoFlex;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.wrap {
+  display: flex;
+  gap: 20px;
+}
+
+.block {
+  padding: 40px 20px;
+  height: fit-content;
+}
+
+.blockItem {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid $btnBlue;
+  margin-top: 21px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &Top {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &Title {
+    color: $lightPurpuleText;
+    font-family: RobotoFlex;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &Btn {
+    transform: rotate(180deg);
+  }
+
+  &Text {
+    max-height: 0;
+    overflow: hidden;
+    color: $lightPurpuleText;
+    font-family: RobotoFlex;
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: 0.6s;
+
+    display: flex;
+    overflow: auto;
+
+    &Visible {
+      transition: 0.6s;
+      max-height: 180px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.btn {
+  padding: 10px 30px;
+  border-radius: 10px;
+  background-color: $btnBlue;
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,127 @@
+@import "../../stylesVariables/colors.scss";
+
+.root {
+  margin-top: 100px;
+  background: url("../../assets/img/trade/pattern-back.png") 0 0/100% 100% no-repeat;
+}
+
+.trade {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftSide {
+  width: 41%;
+}
+
+.title {
+  width: fit-content;
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.swichBtn {
+  margin-top: 20px;
+  border-radius: 20px;
+  border: 1px solid $btnBlue;
+  background-color: $greyViolet;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 11px;
+}
+
+.btn {
+  font-family: RobotoFlex;
+  font-size: 16px;
+  font-weight: 600;
+  color: $lightViolet;
+  padding: 10px 40px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.activeBtn {
+  background-color: $btnBlue;
+  color: $lightPurpuleText;
+}
+
+.steps {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &Title {
+    color: $lightViolet;
+    font-family: RobotoFlex;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &Text {
+    color: $lightPurpuleText;
+    font-family: RobotoFlex;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 145%;
+  }
+}
+
+.rightSide {
+  margin-top: 62px;
+  width: 627px;
+  min-width: 329px;
+  height: 606px;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.dcx {
+  margin-top: 100px;
+
+  &Title {
+    color: $lightPurpule;
+    font-family: RobotoFlex;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 21px;
+  grid-row-gap: 19px;
+
+  &Item {
+    grid-column: span 4;
+
+    &3 {
+      grid-column: span 5;
+    }
+
+    &4 {
+      grid-column: span 3;
+    }
+  }
+}

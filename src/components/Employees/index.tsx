@@ -25,6 +25,21 @@ const Employees = () => {
           <BYBIT />
           <MetamaskFox />
         </div>
+        {/* ================================ */}
+        <div
+          className={`${styles.employeesFlexBlock} ${styles.employeesFirstBlock} ${styles.mobile}`}
+        >
+          <Blockchain />
+          <Trust />
+        </div>
+        <div className={`${styles.employeesFlexBlock} ${styles.mobile}`}>
+          <Polygon />
+          <Binance />
+        </div>
+        <div className={`${styles.employeesFlexBlock} ${styles.mobile}`}>
+          <BYBIT />
+          <MetamaskFox />
+        </div>
       </div>
     </Container>
   );

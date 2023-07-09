@@ -6,7 +6,7 @@
   position: fixed;
   background-color: #2b243770;
   top: 0px;
-  z-index: 3;
+  z-index: 101;
 }
 
 .root {
@@ -16,7 +16,7 @@
   top: 25%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
+  z-index: 102;
 
   div,
   input {

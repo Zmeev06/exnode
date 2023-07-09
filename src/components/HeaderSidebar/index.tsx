@@ -30,7 +30,7 @@ const HeaderSidebar = () => {
     <>
       <div className={styles.main}>
         <div className={styles.header}>
-          <img src={logo} alt="" className={styles.logo} />
+          <img src={logo} alt="" className={styles.logo} onClick={() => navigate("/")}/>
           <div className={styles.buregerBlock}>
             {location.pathname === '/profile' && <img
             src={profile}

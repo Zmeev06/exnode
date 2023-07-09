@@ -11,7 +11,7 @@ const Header = () => {
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
   const [status, setStatus] = useState(false);
-  
+
   const token = localStorage.getItem("token")?.replace(/"/g, "") || "";
   const getProfileFunc = async () => {
     const { data } = await getProfile(token);
@@ -24,7 +24,12 @@ const Header = () => {
     <>
       <Container>
         <div className={styles.main}>
-          <img src={logo} alt="" className={styles.logo} />
+          <img
+            src={logo}
+            alt=""
+            className={styles.logo}
+            onClick={() => navigate("/")}
+          />
           <ul className={styles.nav}>
             <li className={styles.navItem}>
               <p className={styles.navItemText}>Купить криптовалюту</p>
@@ -65,7 +70,7 @@ const Header = () => {
                   onClick={() => {
                     localStorage.setItem("token", "");
                     setStatus(false);
-                    navigate('/')
+                    navigate("/");
                   }}
                 >
                   <p>Выйти</p>

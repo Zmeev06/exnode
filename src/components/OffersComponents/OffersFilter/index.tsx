@@ -24,11 +24,11 @@ const OffersFilters = () => {
         <div className={styles.payment}>
           <p className={styles.summText}>Способ оплаты</p>
           <select className={styles.select}>
-            <option value={"sber"}>Сбербанк</option>
-            <option value={"tink"}>Тинькофф</option>
-            <option value={"raif"}>Райффайзен</option>
-            <option value={"alpha"}>АльфаБанк</option>
-            <option value={"qiwi"}>Qiwi</option>
+            <option value={"sber"} className={styles.option}>Сбербанк</option>
+            <option value={"tink"} className={styles.option}>Тинькофф</option>
+            <option value={"raif"} className={styles.option}>Райффайзен</option>
+            <option value={"alpha"} className={styles.option}>АльфаБанк</option>
+            <option value={"qiwi"} className={styles.option}>Qiwi</option>
           </select>
         </div>
         <div className={styles.filter}>
@@ -36,8 +36,8 @@ const OffersFilters = () => {
             <option value={""} disabled>
               Фильтр
             </option>
-            <option value={"sber"}>Лучшая цена</option>
-            <option value={"tink"}>Новые</option>
+            <option value={"sber"} className={styles.option}>Лучшая цена</option>
+            <option value={"tink"} className={styles.option}>Новые</option>
           </select>
         </div>
         <div className={styles.btnBlock}>

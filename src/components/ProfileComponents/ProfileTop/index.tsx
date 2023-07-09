@@ -13,14 +13,7 @@ const ProfileTop = ({ name }: ProfileTopProps) => {
       <h2 className={styles.title}>Профиль</h2>
       <div className={styles.userInfo}>
         <div className={styles.iconWrap}>
-          <div
-            style={{
-              width: 60,
-              height: 60,
-              borderRadius: "50%",
-              backgroundColor: "#fff",
-            }}
-          ></div>
+          <div className={styles.div}></div>
         </div>
         <div className={styles.info}>
           <h2 className={styles.titleInfo}>{name}</h2>

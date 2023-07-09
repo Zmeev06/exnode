@@ -6,6 +6,32 @@ import { ReactComponent as YouTube } from "../../assets/icons/footer/youtube.svg
 import { ReactComponent as VK } from "../../assets/icons/footer/vk.svg.svg";
 import { ReactComponent as Vcru } from "../../assets/icons/footer/vcru.svg.svg";
 import { ReactComponent as Email } from "../../assets/icons/footer/email.svg";
+import FooterItem from "./FooterItem";
+
+const data = [
+  {
+    title: "Продукты",
+    gridItems: ["Мониторинг", "P2P-торговля", "DeFi"],
+  },
+  {
+    title: "Поддержка",
+    gridItems: [
+      "Контакты",
+      "Политика конфиденциальности",
+      "Условия соглашения",
+      "Руководство по торговле",
+      "Правила торговли",
+    ],
+  },
+  {
+    title: "Социальные сети",
+    gridItems: ["Telegram", "VK", "YouTube"],
+  },
+  {
+    title: "Торговля",
+    gridItems: ["Купить USDT", "Продать USDT"],
+  },
+];
 
 const Footer = () => {
   return (
@@ -27,31 +53,9 @@ const Footer = () => {
         <div className={styles.right}>© 2023 DCX-P2P. Все права защищены.</div>
       </div>
       <div className={styles.grid}>
-        <div className={styles.gridItem}>
-          <h4 className={styles.gridTitle}>Продукты</h4>
-          <p className={styles.gridText}>Мониторинг</p>
-          <p className={styles.gridText}>P2P-торговля</p>
-          <p className={styles.gridText}>DeFi</p>
-        </div>
-        <div className={styles.gridItem}>
-          <h4 className={styles.gridTitle}>Поддержка</h4>
-          <p className={styles.gridText}>Контакты</p>
-          <p className={styles.gridText}>Политика конфиденциальности</p>
-          <p className={styles.gridText}>Условия соглашения</p>
-          <p className={styles.gridText}>Руководство по торговле</p>
-          <p className={styles.gridText}>Правила торговли</p>
-        </div>
-        <div className={styles.gridItem}>
-          <h4 className={styles.gridTitle}>Социальные сети</h4>
-          <p className={styles.gridText}>Telegram</p>
-          <p className={styles.gridText}>VK</p>
-          <p className={styles.gridText}>YouTube</p>
-        </div>
-        <div className={styles.gridItem}>
-          <h4 className={styles.gridTitle}>Торговля</h4>
-          <p className={styles.gridText}>Купить USDT</p>
-          <p className={styles.gridText}>Продать USDT</p>
-        </div>
+        {data.map((el) => (
+          <FooterItem title={el.title} gridItems={el.gridItems} />
+        ))}
       </div>
     </div>
   );

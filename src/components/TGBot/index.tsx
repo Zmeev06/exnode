@@ -4,12 +4,12 @@ import Container from "../UI/Container";
 import FirstiPhone from "../../assets/img/tg-bot/1_iPhone-12.png";
 import SecondiPhone from "../../assets/img/tg-bot/2_Wood-Hand.png";
 import ThirdiPhone from "../../assets/img/tg-bot/3_iPhone 12 Pro (Wooden Hands).png";
+import { Navigation } from "swiper";
+
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar } from "swiper/modules";
-import "swiper/scss";
+
 import "swiper/scss/navigation";
-import "swiper/scss/pagination";
-import "swiper/scss/scrollbar";
+import "swiper/css";
 
 const TGBot = () => {
   return (
@@ -29,17 +29,19 @@ const TGBot = () => {
         <Swiper
           modules={[Navigation]}
           spaceBetween={50}
-          slidesPerView={3}
+          slidesPerView={1}
+          loop
           navigation
+          className={styles.swiper}
         >
-          <SwiperSlide className={styles.imgWrap}>
-            <img className={styles.img} src={FirstiPhone} alt="" />
+          <SwiperSlide className={styles.slide}>
+            <img className={styles.mobileImg} src={FirstiPhone} alt="" />
           </SwiperSlide>
-          <SwiperSlide>
-            <img className={styles.img} src={SecondiPhone} alt="" />
+          <SwiperSlide className={styles.slide}>
+            <img className={styles.mobileImg} src={SecondiPhone} alt="" />
           </SwiperSlide>
-          <SwiperSlide>
-            <img className={styles.img} src={ThirdiPhone} alt="" />
+          <SwiperSlide className={styles.slide}>
+            <img className={styles.mobileImg} src={ThirdiPhone} alt="" />
           </SwiperSlide>
         </Swiper>
       </div>

@@ -10,6 +10,7 @@
   font-family: RobotoFlex;
   font-size: 32px;
   font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .wrap {
@@ -63,9 +64,13 @@
     display: flex;
     overflow: auto;
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     &Visible {
       transition: 0.6s;
-      max-height: 180px;
+      max-height: 150px;
       margin-bottom: 10px;
     }
   }
@@ -75,9 +80,16 @@
   padding: 10px 30px;
   border-radius: 10px;
   background-color: $btnBlue;
+  border: 1px solid $btnBlue;
   color: $lightPurpuleText;
   font-family: RobotoFlex;
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 20px;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #ffffff00;
+    border: 1px solid $btnBlue;
+  }
 }

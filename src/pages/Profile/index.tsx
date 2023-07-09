@@ -30,7 +30,7 @@ const Profile = () => {
         <OveralBalance balance={profile?.data.balance_usdt || 0} />
         <Statistics />
         <PaymentMethod />
-        {/* <ProfileBottom /> */}
+        <ProfileBottom />
       </div>
     </div>
   );

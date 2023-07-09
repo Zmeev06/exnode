@@ -15,8 +15,8 @@ interface BalanceBlockProps {
 
 const BalanceBlock = ({ balance }: BalanceBlockProps) => {
   return (
-    <div>
-      <ContentBlock>
+    <div className={styles.main}>
+      <ContentBlock className={styles.content}>
         <div className={styles.topBlock}>
           <div className={styles.balanceInfo}>
             <p className={styles.generalText}>Общий баланс</p>

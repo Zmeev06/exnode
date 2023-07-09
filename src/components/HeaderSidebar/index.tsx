@@ -4,15 +4,20 @@ import logo from "../../assets/img/header/miniLogo.svg";
 import burger from "../../assets/img/header/burger.svg";
 import cross from "../../assets/img/header/cross.svg";
 import arrow from "../../assets/img/header/arrow.svg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { getProfile } from "../../services/profileServices";
 import AuthorizationBlock from "../AuthorizationComponents/AuthorizationBlock";
+import profile from '../../assets/img/header/profile.svg'
+import Sidebar from "../Sidebar";
+
 
 const HeaderSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const [openSidebar, setIsOpenSidebar] = useState(false)
   const [openModal, setOpenModal] = useState(false);
   const [status, setStatus] = useState(false);
+  const location = useLocation()
   const token = localStorage.getItem("token")?.replace(/"/g, "") || "";
   const getProfileFunc = async () => {
     const { data } = await getProfile(token);
@@ -26,12 +31,21 @@ const HeaderSidebar = () => {
       <div className={styles.main}>
         <div className={styles.header}>
           <img src={logo} alt="" className={styles.logo} />
+          <div className={styles.buregerBlock}>
+            {location.pathname === '/profile' && <img
+            src={profile}
+            alt=""
+            className={styles.profile}
+            onClick={() => setIsOpenSidebar(!openSidebar)}
+          />}
           <img
             src={isOpen ? cross : burger}
             alt=""
             className={styles.burger}
             onClick={() => setIsOpen(!isOpen)}
           />
+          </div>
+          
         </div>
         <div className={`${styles.content} ${isOpen && styles.active}`}>
           <div className={styles.navigation}>
@@ -96,6 +110,7 @@ const HeaderSidebar = () => {
         setOpenModal={setOpenModal}
         setStatus={setStatus}
       />
+      <Sidebar className={`${styles.sidebar} ${openSidebar && styles.sidebarActive}`}/>
     </>
   );
 };

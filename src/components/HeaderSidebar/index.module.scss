@@ -5,7 +5,7 @@
   position: fixed;
   z-index: 100;
   background-color: $bg;
-  
+
   @media (max-width: 1250px) {
     display: block;
   }
@@ -86,4 +86,25 @@
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+}
+
+.profile {
+  margin-right: 10px;
+}
+
+.sidebar {
+  position: fixed;
+  left: -100%;
+  top: 86px;
+  background-color: rgba(41, 20, 75);
+  height: 100vh;
+  transition: 1s;
+}
+
+.sidebarActive {
+  position: fixed;
+  transition: 1s;
+  top: 86px;
+  left: 0px;
+  z-index: 4;
 }

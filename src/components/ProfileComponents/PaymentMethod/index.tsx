@@ -13,7 +13,11 @@ const PaymentMethod = () => {
         подтвержденному Вами имени на Exnode P2P. Можно добавить до 20 способов
         оплаты.
       </p>
-      <TextButton text="Добавить способ оплаты" width={354} />
+      <TextButton
+        className={styles.btn}
+        text="Добавить способ оплаты"
+        width={354}
+      />
     </div>
   );
 };

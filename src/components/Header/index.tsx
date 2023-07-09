@@ -11,6 +11,7 @@ const Header = () => {
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
   const [status, setStatus] = useState(false);
+  
   const token = localStorage.getItem("token")?.replace(/"/g, "") || "";
   const getProfileFunc = async () => {
     const { data } = await getProfile(token);

@@ -19,4 +19,7 @@
     text-decoration: underline;
     color: $btnBlue;
   }
+  @media (max-width: 1250px) {
+    font-size: 14px;
+  }
 }

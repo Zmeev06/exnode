@@ -1,3 +1,6 @@
 .main {
   margin-top: 111px;
+  @media (max-width:1250px) {
+    margin-top: 50px;
+  }
 }

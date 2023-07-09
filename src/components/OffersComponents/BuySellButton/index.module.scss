@@ -10,6 +10,9 @@
   align-items: center;
   padding: 10px;
   justify-content: space-between;
+  @media (max-width: 1250px) {
+    width: 162px;
+  }
 }
 
 .btn {
@@ -24,6 +27,11 @@
   &:hover {
     color: $green;
     border: 1px solid $green;
+  }
+  @media (max-width: 1250px) {
+    width: 65px;
+    height: 32px;
+    font-size: 14px;
   }
 }
 

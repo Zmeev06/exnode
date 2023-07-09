@@ -61,7 +61,7 @@ const Trade = () => {
             <img src={Screens} alt="" />
           </div>
         </div>
-        {/* <div className={styles.dcx}>
+        <div className={styles.dcx}>
           <h2 className={styles.dcxTitle}>DCX - это про...</h2>
           <div className={styles.grid}>
             <ContentBlock className={styles.gridItem}>
@@ -102,7 +102,7 @@ const Trade = () => {
               </p>
             </ContentBlock>
           </div>
-        </div> */}
+        </div>
       </Container>
     </div>
   );

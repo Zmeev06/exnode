@@ -10,6 +10,10 @@ import ReferralIcon from "../../assets/icons/profile/sidebar/6_gift.svg";
 import ForkIcon from "../../assets/icons/profile/sidebar/7_fork.svg";
 import SettingsIcon from "../../assets/icons/profile/sidebar/8_settings.svg";
 
+interface SidebarProps {
+  className?: string
+}
+
 const sidebarItems = [
   {
     icon: UserIcon,
@@ -53,11 +57,11 @@ const sidebarItems = [
   },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({className} : SidebarProps) => {
   const [activeSidebarItem, setActiveSidebarItem] = useState(0);
 
   return (
-    <div className={styles.root}>
+    <div className={`${styles.root} ${className}`}>
       <div className={styles.top}>
         <h2 className={styles.title}>P2P</h2>
         <h3 className={styles.email}>p**********@gmail.com</h3>

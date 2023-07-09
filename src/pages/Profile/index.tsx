@@ -24,7 +24,7 @@ const Profile = () => {
 
   return (
     <div className={styles.root}>
-      <Sidebar />
+      <Sidebar className={styles.sidebar} />
       <div className={styles.main}>
         <ProfileTop name={profile?.data.login || ""} />
         <OveralBalance balance={profile?.data.balance_usdt || 0} />

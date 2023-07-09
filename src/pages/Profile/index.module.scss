@@ -8,3 +8,9 @@
     padding: 0;
   }
 }
+
+.sidebar {
+  @media (max-width: 1250px) {
+    display: none;
+  }
+}

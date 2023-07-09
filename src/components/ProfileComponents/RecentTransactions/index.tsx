@@ -6,7 +6,7 @@ const RecentTransactions = () => {
     <ContentBlock className={styles.main}>
       <p className={styles.title}>Последние операции</p>
       <div className={styles.filters}>
-        <p className={styles.filterItem1}>ID операции</p>
+        <p className={styles.filterItem1}>ID</p>
         <p className={styles.filterItem}>Тип</p>
         <p className={styles.filterItem}>Сумма</p>
         <p className={styles.filterItem}>Дата</p>

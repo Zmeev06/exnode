@@ -7,13 +7,13 @@ import Footer from "../Footer";
 const Layout = () => {
   return (
     <>
-      <Container>
+      {/* <Container>
         <Header />
-      </Container>
+      </Container> */}
       <Outlet />
-      <Container>
+      {/* <Container>
         <Footer />
-      </Container>
+      </Container> */}
     </>
   );
 };

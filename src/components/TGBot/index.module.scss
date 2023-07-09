@@ -9,6 +9,19 @@
   background-blend-mode: screen;
 }
 
+.desktop {
+  display: block;
+
+  @media (max-width: 1060px) {
+    display: none;
+  }
+}
+
+.imgWrap {
+  width: 208px;
+  height: 420px;
+}
+
 .img {
   width: 100%;
   height: 100%;
@@ -16,4 +29,12 @@
 
 .bottomImg {
   align-self: flex-end;
+}
+
+.mobile {
+  display: none;
+
+  @media (max-width: 1060px) {
+    display: flex;
+  }
 }

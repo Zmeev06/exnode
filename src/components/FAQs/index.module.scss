@@ -2,6 +2,10 @@
 
 .root {
   margin-top: 100px;
+
+  @media (max-width: 1060px) {
+    margin-top: 57px;
+  }
 }
 
 .title {
@@ -16,11 +20,13 @@
 .wrap {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .block {
   padding: 40px 20px;
   height: fit-content;
+  min-width: 326px;
 }
 
 .blockItem {
@@ -45,6 +51,10 @@
     font-family: RobotoFlex;
     font-size: 20px;
     font-weight: 600;
+
+    @media (max-width: 574px) {
+      max-width: 280px;
+    }
   }
 
   &Btn {

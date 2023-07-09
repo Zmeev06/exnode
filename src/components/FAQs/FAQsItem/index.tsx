@@ -17,7 +17,9 @@ const FAQsItem = ({ title, body }: FAQsItemProps) => {
         className={styles.blockItemTop}
       >
         <h3 className={styles.blockItemTitle}>{title}</h3>
-        <RollUp className={`${isVisible && styles.blockItemBtn}`} />
+        <div>
+          <RollUp className={`${isVisible && styles.blockItemBtn}`} />
+        </div>
       </div>
       <p
         className={`${styles.blockItemText} ${

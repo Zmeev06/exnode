@@ -2,10 +2,12 @@
 
 .root {
   margin-top: 100px;
+
   @media (max-width: 1250px) {
     margin-top: 50px;
   }
 }
+
 .title {
   margin-bottom: 20px;
   font-size: 32px;

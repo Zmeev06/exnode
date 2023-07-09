@@ -11,15 +11,14 @@ const Layout = () => {
     <>
       <Container>
         <Header />
-        
       </Container>
       <HeaderSidebar />
       <div className={styles.content}>
         <Outlet />
 
-        {/* <Container>
-        <Footer />
-      </Container> */}
+        <Container>
+          <Footer />
+        </Container>
       </div>
     </>
   );

@@ -14,9 +14,9 @@ const MainPage = () => {
       <OffersBlock />
       <P2PInfo />
       <Employees />
-      {/* <Trade /> */}
-      {/* <TGBot /> */}
-      {/* <FAQs /> */}
+      <Trade />
+      <TGBot />
+      <FAQs />
     </div>
   );
 };

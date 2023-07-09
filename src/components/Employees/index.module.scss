@@ -2,6 +2,10 @@
 
 .root {
   margin-top: 100px;
+
+  @media (max-width: 425px) {
+    margin-top: 57px;
+  }
 }
 
 .title {
@@ -10,14 +14,46 @@
   font-family: RobotoFlex;
   font-weight: 700;
   margin-bottom: 30px;
+
+  @media (max-width: 425px) {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
 }
 
 .employeesFlexBlock {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 625px) {
+    & {
+      svg {
+        width: 156px;
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+    display: none;
+  }
 }
 
 .employeesFirstBlock {
   margin-bottom: 60px;
+}
+
+.mobile {
+  display: none;
+
+  @media (max-width: 425px) {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

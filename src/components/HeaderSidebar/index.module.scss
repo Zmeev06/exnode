@@ -96,8 +96,8 @@
   position: fixed;
   left: -100%;
   top: 86px;
-  background-color: rgba(41, 20, 75);
-  height: 100vh;
+  background-color: rgba(41, 20, 75) !important;
+  height: 100vh !important;
   transition: 1s;
 }
 

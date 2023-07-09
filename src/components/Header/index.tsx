@@ -64,6 +64,7 @@ const Header = () => {
                   onClick={() => {
                     localStorage.setItem("token", "");
                     setStatus(false);
+                    navigate('/')
                   }}
                 >
                   <p>Выйти</p>

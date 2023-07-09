@@ -12,7 +12,7 @@
 }
 
 .leftSide {
-  width: 603px;
+  width: 607px;
 }
 
 .title {
@@ -41,7 +41,12 @@
   color: $lightViolet;
   padding: 10px 40px;
   border-radius: 10px;
+  border: 1px solid transparent;
   transition: 0.3s;
+
+  &:hover {
+    border: 1px solid $btnBlue;
+  }
 }
 
 .activeBtn {

@@ -10,13 +10,13 @@ import FAQs from "../../components/FAQs";
 const MainPage = () => {
   return (
     <div>
-      {/* <BackgroundBlock />
+      <BackgroundBlock />
       <OffersBlock />
       <P2PInfo />
       <Employees />
-      <Trade /> */}
+      <Trade />
       <TGBot />
-      {/* <FAQs /> */}
+      <FAQs />
     </div>
   );
 };

@@ -1,33 +1,30 @@
 import React from "react";
 import styles from "./index.module.scss";
+import PayBlock from "../../UI/PayBlock";
 
 // import ContentBlock from "../../UI/ContentBlock";
 // import TextButton from "../../UI/TextButton";
 
-interface PayBlockProps {
+interface PayBlockFirstStageProps {
   sum: string;
   price: string;
   requisites: string;
   paymentMethod: number;
 }
-const PayBlock = ({ sum, price, requisites, paymentMethod }: PayBlockProps) => {
+
+const PayBlockFirstStage = ({
+  sum,
+  price,
+  requisites,
+  paymentMethod,
+}: PayBlockFirstStageProps) => {
   return (
-    <div className={styles.main}>
-      <p className={styles.title}>Подтвердите информацию об ордере</p>
-      <div className={styles.orderInfo}>
-        <div className={styles.summ}>
-          <p className={styles.orderTitle}>Сумма</p>
-          <p className={styles.orderText}>{sum}₽</p>
-        </div>
-        <div className={styles.price}>
-          <p className={styles.orderTitle}>Цена</p>
-          <p className={styles.orderText}>{price}₽</p>
-        </div>
-        <div className={styles.count}>
-          <p className={styles.orderTitle}>Количество</p>
-          <p className={styles.orderText}>11.43USDT</p>
-        </div>
-      </div>
+    <PayBlock
+      header="Подтвердитеeeee информацию об ордере"
+      sum={sum}
+      priceRub={price}
+      priceUSDT={price}
+    >
       <p className={styles.title}>
         Переведите средства на счет продавца указанный ниже
       </p>
@@ -54,7 +51,7 @@ const PayBlock = ({ sum, price, requisites, paymentMethod }: PayBlockProps) => {
           <p className={styles.reset}>Отменить ордер</p>
         </div>
       </div>
-    </div>
+    </PayBlock>
   );
 };
-export default PayBlock;
+export default PayBlockFirstStage;

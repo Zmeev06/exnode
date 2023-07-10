@@ -1,0 +1,28 @@
+@import "../../../stylesVariables/colors.scss";
+
+.main {
+  width: 832px;
+  margin-top: 40px;
+  padding: 28px 16px;
+  background-color: rgba(41, 20, 75, 0.7);
+  box-shadow: 0 2px 14px rgba(9, 42, 98, 0.12);
+  border-radius: 10px;
+  border: 1px solid $btnBlue;
+}
+
+.title {
+  font-size: 20px;
+  color: $lightVioletText;
+}
+
+.orderInfo {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.orderTitle {
+  font-size: 12px;
+  color: #ffffff70;
+  margin-bottom: 7px;
+}

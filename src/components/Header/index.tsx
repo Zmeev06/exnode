@@ -36,7 +36,12 @@ const Header = () => {
               <img src={arrow} alt="" className={styles.navItemArrow} />
             </li>
             <li className={`${styles.navItem} ${styles.newItem}`}>
-              <p className={styles.navItemText}>P2P-торговля</p>
+              <p
+                onClick={() => navigate("/payment")}
+                className={styles.navItemText}
+              >
+                P2P-торговля
+              </p>
               <div className={styles.newBlock}>
                 <p className={styles.newText}>new</p>
               </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./index.module.scss";
+import { useNavigate } from "react-router-dom";
 
 interface OffersItemProps {
   name: string;
@@ -18,6 +19,7 @@ const OffersItem = ({
   currency,
   id,
 }: OffersItemProps) => {
+  const navigate = useNavigate();
   return (
     <div className={styles.main}>
       <div className={styles.items}>
@@ -49,7 +51,10 @@ const OffersItem = ({
           </div>
         </div>
         <div className={styles.item5}>
-          <div className={styles.btn}>
+          <div
+            className={styles.btn}
+            onClick={() => navigate(`/offer/buy/${id}`)}
+          >
             <p>
               {`Купить ${
                 currency === 1 ? "USDT" : currency === 2 ? "BTC" : "ETH"

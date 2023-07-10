@@ -3,18 +3,22 @@ import styles from "./index.module.scss";
 import avatar from "../../../assets/img/user.png";
 import { getMessages, sendMessage } from "../../../services/paymentService";
 import { IMessages } from "../../../interfaces/serviceInterfaces";
-import clip from '../../../assets/icons/clip.svg'
-import send from '../../../assets/icons/send.svg'
+import clip from "../../../assets/icons/clip.svg";
+import send from "../../../assets/icons/send.svg";
+import { useLocation } from "react-router-dom";
 
 interface ChatProps {
   myName: string;
 }
-const Chat = ({myName} : ChatProps) => {
+const Chat = ({ myName }: ChatProps) => {
   const [messageText, setMessageText] = useState("");
   const token = localStorage.getItem("token") || "";
   const [messages, setMessages] = useState<IMessages>();
+  const pathname = useLocation().pathname;
+
+
   const getAllMessages = async () => {
-    const { data } = await getMessages(1, token.replace(/"/g, ""));
+    const { data } = await getMessages(+pathname.split('/')[3], token.replace(/"/g, ""));
     setMessages(data);
   };
 
@@ -25,7 +29,6 @@ const Chat = ({myName} : ChatProps) => {
     };
   }, []);
 
-
   return (
     <div className={styles.main}>
       <div className={styles.topBlock}>
@@ -34,7 +37,12 @@ const Chat = ({myName} : ChatProps) => {
       </div>
       <div className={styles.chatContent}>
         {messages?.data.map((item, index) => (
-          <div className={`${myName === item.user.login ? styles.myMessage : styles.message}`} key={index}>
+          <div
+            className={`${
+              myName === item.user.login ? styles.myMessage : styles.message
+            }`}
+            key={index}
+          >
             <p className={styles.messageUser}>{item.user.login}</p>
             <p className={styles.messageText}>{item.text}</p>
           </div>
@@ -42,7 +50,7 @@ const Chat = ({myName} : ChatProps) => {
       </div>
       <div className={styles.bottomBlock}>
         <div className={styles.inputBlock}>
-          <img src={clip} alt="" className={styles.clip}/>
+          <img src={clip} alt="" className={styles.clip} />
           <input
             type="text"
             placeholder="Введите сообщение"

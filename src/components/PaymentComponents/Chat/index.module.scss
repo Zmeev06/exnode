@@ -1,0 +1,109 @@
+@import '../../../stylesVariables/colors.scss';
+
+.main {
+  width: 500px;
+  border: 1px solid $btnBlue;
+  border-radius: 20px;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.topBlock {
+  background-color: rgba(27, 0, 74, 0.3);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px 20px 0 0;
+}
+
+.chatContent {
+  height: 420px;
+}
+
+.bottomBlock {
+  background-color: rgba(27, 0, 74, 0.30);
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 0 0 20px 20px;
+  justify-content: space-between;
+}
+
+.inputBlock {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  margin-left: 20px;
+  width: 350px;
+  height: 40px;
+  border: 1px solid $btnBlue;
+  border-radius: 6px;
+  padding-left: 10px;
+
+  &::placeholder {
+    color: #ffffff30;
+  }
+}
+
+.clip {
+  cursor: pointer;
+}
+
+.send {
+  cursor: pointer;
+}
+
+.myMessage {
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 30px;
+  max-width: 400px;
+  border-radius: 10px;
+  background-color: $btnBlue;
+  margin-top: 10px;
+  width: fit-content;
+}
+
+.message {
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 30px;
+  max-width: 400px;
+  border-radius: 10px;
+  background-color: $darkViolet;
+  margin-top: 10px;
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.chatContent {
+  padding: 15px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: end;
+  -ms-overflow-style: none; /* IE и Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.messageUser {
+  color: #ffffff80;
+}
+
+.messageText {
+  margin-left: 20px;
+  margin-top: 5px;
+  max-width: 390px;
+  overflow: hidden;
+}

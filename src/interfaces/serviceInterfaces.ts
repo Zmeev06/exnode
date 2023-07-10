@@ -63,3 +63,4 @@ export interface IOfferData {
     is_online: number;
   };
 }
+

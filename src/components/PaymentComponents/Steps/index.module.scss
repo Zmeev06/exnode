@@ -1,0 +1,58 @@
+@import '../../../stylesVariables/colors.scss';
+
+.steps {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  justify-content: space-between;
+
+}
+
+.line {
+  width: 130px;
+  height: 4px;
+  border: 1px solid rgba(146, 79, 255, 0.30);
+  border-radius: 10px;
+}
+
+.numberBlock {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(146, 79, 255, 0.30);
+  color: rgba(146, 79, 255, 0.30);
+}
+
+.stepBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 78px;
+  width: 190px;
+  margin-top: 35px;
+}
+
+.active {
+  background-color: $darkViolet;
+  border: 1px solid $btnBlue;
+  color: $white;
+}
+
+.descriptionBlock {
+  display: flex;
+  margin-top: 10px;
+  
+}
+.description {
+  max-width: 150px;
+  font-size: 10px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.centerNumber {
+  margin: 0px 100px;
+}

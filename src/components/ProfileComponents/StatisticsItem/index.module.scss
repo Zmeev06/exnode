@@ -1,0 +1,31 @@
+@import "../../../stylesVariables/colors.scss";
+
+.gridItem {
+  padding: 10px;
+  min-height: 110px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+
+  border-radius: 6px;
+  border: 1px solid $btnBlue;
+  background-color: $greyViolet;
+}
+
+.gridItemTitle {
+  line-height: 24px;
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.gridItemBody {
+  font-size: 18px;
+  color: $lightViolet;
+  font-family: RobotoFlex;
+  font-weight: 400;
+  line-height: 145%;
+}

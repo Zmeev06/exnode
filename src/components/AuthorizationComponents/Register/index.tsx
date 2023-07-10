@@ -18,6 +18,7 @@ const Register = ({ setAuthType, setOpenModal }: RegisterProps) => {
   const userReg = async () => {
     const { data } = await userRegister(password, login, email);
   };
+
   return (
     <div className={styles.root}>
       <div className={styles.topBlock}>

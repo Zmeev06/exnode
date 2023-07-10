@@ -1,0 +1,105 @@
+@import "../../stylesVariables/colors.scss";
+
+.root {
+  margin-top: 100px;
+
+  @media (max-width: 1060px) {
+    margin-top: 57px;
+  }
+}
+
+.title {
+  color: $lightPurpuleText;
+  text-align: center;
+  font-family: RobotoFlex;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.wrap {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.block {
+  padding: 40px 20px;
+  height: fit-content;
+  min-width: 326px;
+}
+
+.blockItem {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid $btnBlue;
+  margin-top: 21px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &Top {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &Title {
+    color: $lightPurpuleText;
+    font-family: RobotoFlex;
+    font-size: 20px;
+    font-weight: 600;
+
+    @media (max-width: 574px) {
+      max-width: 280px;
+    }
+  }
+
+  &Btn {
+    transform: rotate(180deg);
+  }
+
+  &Text {
+    max-height: 0;
+    overflow: hidden;
+    color: $lightPurpuleText;
+    font-family: RobotoFlex;
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: 0.6s;
+
+    display: flex;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &Visible {
+      transition: 0.6s;
+      max-height: 150px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.btn {
+  padding: 10px 30px;
+  border-radius: 10px;
+  background-color: $btnBlue;
+  border: 1px solid $btnBlue;
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #ffffff00;
+    border: 1px solid $btnBlue;
+  }
+}

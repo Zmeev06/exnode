@@ -5,10 +5,13 @@ import logo from "../../assets/img/header/logo.svg";
 import arrow from "../../assets/img/header/arrow.svg";
 import AuthorizationBlock from "../AuthorizationComponents/AuthorizationBlock";
 import { getProfile } from "../../services/profileServices";
+import { useNavigate } from "react-router";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
   const [status, setStatus] = useState(false);
+
   const token = localStorage.getItem("token")?.replace(/"/g, "") || "";
   const getProfileFunc = async () => {
     const { data } = await getProfile(token);
@@ -21,7 +24,12 @@ const Header = () => {
     <>
       <Container>
         <div className={styles.main}>
-          <img src={logo} alt="" className={styles.logo} />
+          <img
+            src={logo}
+            alt=""
+            className={styles.logo}
+            onClick={() => navigate("/")}
+          />
           <ul className={styles.nav}>
             <li className={styles.navItem}>
               <p className={styles.navItemText}>Купить криптовалюту</p>
@@ -51,7 +59,10 @@ const Header = () => {
           <div className={styles.profileBtns}>
             {status ? (
               <>
-                <div className={styles.loginBtn}>
+                <div
+                  onClick={() => navigate("/profile")}
+                  className={styles.loginBtn}
+                >
                   <p>Профиль</p>
                 </div>
                 <div
@@ -59,6 +70,7 @@ const Header = () => {
                   onClick={() => {
                     localStorage.setItem("token", "");
                     setStatus(false);
+                    navigate("/");
                   }}
                 >
                   <p>Выйти</p>

@@ -1,4 +1,4 @@
-@import '../../../stylesVariables/colors.scss';
+@import "../../../stylesVariables/colors.scss";
 
 .main {
   background-color: $greyViolet;
@@ -10,6 +10,10 @@
   align-items: center;
   padding: 10px;
   justify-content: space-between;
+  @media (max-width: 1250px) {
+    width: 162px;
+    margin-bottom: 10px;
+  }
 }
 
 .btn {
@@ -20,10 +24,15 @@
   justify-content: center;
   border-radius: 8px;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
   &:hover {
     color: $green;
     border: 1px solid $green;
+  }
+  @media (max-width: 1250px) {
+    width: 65px;
+    height: 32px;
+    font-size: 14px;
   }
 }
 

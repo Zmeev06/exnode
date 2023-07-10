@@ -1,5 +1,10 @@
-@import '../../stylesVariables/colors.scss'
-;
+@import '../../stylesVariables/colors.scss';
+
+.main {
+  @media (max-width: 1250px) {
+    display: none;
+  }
+}
 .bg {
   background: url('../../assets/img/bg.jpg') 50%/cover no-repeat;
   height: 274px;

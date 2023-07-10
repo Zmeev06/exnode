@@ -1,0 +1,174 @@
+@import "../../stylesVariables/colors.scss";
+
+.root {
+  margin-top: 100px;
+  background: url("../../assets/img/trade/pattern-back.png") 0 0/100% 100% no-repeat;
+}
+
+.trade {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 786px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.leftSide {
+  max-width: 607px;
+}
+
+.title {
+  width: fit-content;
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 32px;
+  font-weight: 700;
+
+  @media (max-width: 425px) {
+    font-size: 20px;
+  }
+}
+
+.swichBtn {
+  width: 607px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: 1px solid $btnBlue;
+  background-color: $greyViolet;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 11px;
+
+  @media (max-width: 1020px) {
+    display: none;
+  }
+}
+
+.btn {
+  font-family: RobotoFlex;
+  font-size: 16px;
+  font-weight: 600;
+  color: $lightViolet;
+  padding: 10px 40px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: 0.3s;
+
+  &:hover {
+    border: 1px solid $btnBlue;
+  }
+}
+
+.activeBtn {
+  background-color: $btnBlue;
+  color: $lightPurpuleText;
+}
+
+.steps {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &Title {
+    color: $lightViolet;
+    font-family: RobotoFlex;
+    font-size: 24px;
+    font-weight: 700;
+
+    @media (max-width: 425px) {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+
+  &Text {
+    color: $lightPurpuleText;
+    font-family: RobotoFlex;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 145%;
+
+    @media (max-width: 425px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.rightSide {
+  margin-top: 62px;
+  max-width: 627px;
+  width: 100%;
+  min-width: 393px;
+  max-height: 606px;
+  height: 100%;
+
+  img {
+    width: 100%;
+  }
+
+  @media (max-width: 786px) {
+    margin-top: 20px;
+    min-width: 329px;
+  }
+}
+
+.dcx {
+  margin-top: 100px;
+
+  &Title {
+    color: $lightPurpule;
+    font-family: RobotoFlex;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+
+    @media (max-width: 425px) {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 425px) {
+    margin-top: 60px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 21px;
+  grid-row-gap: 19px;
+
+  &Item {
+    grid-column: span 4;
+
+    &3 {
+      grid-column: span 5;
+    }
+
+    &4 {
+      grid-column: span 3;
+    }
+  }
+
+  @media (max-width: 946px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+
+    &Item {
+      grid-column: span 1;
+    }
+  }
+}

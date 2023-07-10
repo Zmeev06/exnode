@@ -4,7 +4,7 @@ import { IOrderInfo, IProfile } from "../../interfaces/serviceInterfaces";
 import styles from "./index.module.scss";
 import InfoBlock from "../../components/PaymentComponents/InfoBLock";
 import Steps from "../../components/PaymentComponents/Steps";
-import PayBlock from "../../components/PaymentComponents/PayBlock";
+import PayBlockFirstStage from "../../components/PaymentComponents/PayBlockFirstStage";
 import Chat from "../../components/PaymentComponents/Chat";
 import { getProfile } from "../../services/profileServices";
 import Container from "../../components/UI/Container";
@@ -38,7 +38,7 @@ const PaymentPage = () => {
         <div className={styles.leftBlock}>
           <InfoBlock time={currentTime} />
           <Steps />
-          <PayBlock
+          <PayBlockFirstStage
             sum={orderInfo?.data.sum || "0"}
             paymentMethod={orderInfo?.data.payment_method || 0}
             requisites={orderInfo?.data.requisites || ""}

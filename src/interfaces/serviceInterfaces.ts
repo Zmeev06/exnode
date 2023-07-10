@@ -40,3 +40,26 @@ export interface IMessage {
     login: string;
   };
 }
+
+export interface IOffer {
+  success: boolean;
+  data: IOfferData;
+}
+
+export interface IOfferData {
+  id: number;
+  type: number;
+  currency: number;
+  limit: string;
+  price: string;
+  payment_method: number;
+  limit_start: number;
+  limit_end: number;
+  percent_success: number;
+  requisites: string;
+  user: {
+    id: number;
+    login: string;
+    is_online: number;
+  };
+}

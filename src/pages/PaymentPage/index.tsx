@@ -39,13 +39,13 @@ const PaymentPage = () => {
         <div className={styles.leftBlock}>
           <InfoBlock time={currentTime} />
           <Steps />
-          {/*           <PayBlockFirstStage
+          <PayBlockFirstStage
             sum={orderInfo?.data.sum || "0"}
             paymentMethod={orderInfo?.data.payment_method || 0}
             requisites={orderInfo?.data.requisites || ""}
             price={orderInfo?.data.price || "0"}
-          /> */}
-          <PayBlockSecondStageSeller />
+          />
+          {/*      <PayBlockSecondStageSeller /> */}
         </div>
         <div className={styles.rightBlock}>
           <Chat myName={userInfo?.data.login || ""} />

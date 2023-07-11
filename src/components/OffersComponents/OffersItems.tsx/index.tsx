@@ -32,6 +32,7 @@ const OffersItems = ({ data }: OffersItemsProps) => {
             limit_start={item.limit_start}
             currency={item.currency}
             id={item.id}
+            paymentMethod={item.payment_method}
             key={index}
           />  
         ))}

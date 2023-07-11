@@ -6,7 +6,7 @@ import { ReactComponent as Plus } from "../../../assets/icons/plusFilter.svg";
 import AddNewModal from "../../AddNewModal/MainBlock";
 
 const OffersFilters = () => {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <>
       <div className={styles.main}>

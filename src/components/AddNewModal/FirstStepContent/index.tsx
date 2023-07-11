@@ -3,16 +3,21 @@ import styles from "./index.module.scss";
 import arrow from "../../../assets/icons/arrow-right.svg";
 import ContentBlock from "../../UI/ContentBlock";
 
-const FirstStepContentModal = () => {
+interface FirstStepContentModalProps {
+  setCurrency: (currency: number) => void;
+  price: number;
+  setPrice: (price: number ) => void;
+}
+
+const FirstStepContentModal = ({setCurrency, price, setPrice}: FirstStepContentModalProps) => {
   const [type, setType] = useState("notFix");
-  const [price, setPrice] = useState(10);
   const [percents, setPercents] = useState(111);
   return (
     <div className={styles.main}>
       <div className={styles.inputs}>
         <div>
           <p className={styles.title}>Актив</p>
-          <select className={styles.select}>
+          <select className={styles.select} onChange={(e) => setCurrency(+e.target.value)}>
             <option value={1}>USDT</option>
             <option value={2}>BTC</option>
             <option value={3}>TRX</option>
@@ -74,7 +79,7 @@ const FirstStepContentModal = () => {
               <p
                 className={styles.controlls}
                 onClick={() => {
-                  price > 0 && setPrice((prev) => prev - 0.01);
+                  price > 0 && setPrice(price-0.1);
                   price < 0 && setPrice(0);
                 }}
               >
@@ -91,7 +96,7 @@ const FirstStepContentModal = () => {
               </div>
               <p
                 className={styles.controlls}
-                onClick={() => setPrice((prev) => prev + 0.01)}
+                onClick={() => setPrice(price + 0.01)}
               >
                 +
               </p>

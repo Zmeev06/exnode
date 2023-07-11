@@ -8,6 +8,7 @@ import PayBlockFirstStage from "../../components/PaymentComponents/PayBlockFirst
 import Chat from "../../components/PaymentComponents/Chat";
 import { getProfile } from "../../services/profileServices";
 import Container from "../../components/UI/Container";
+import PayBlockSecondStageSeller from "../../components/PaymentComponents/PayBlockSecondStageSeller";
 
 const PaymentPage = () => {
   const [orderInfo, setOrderInfo] = useState<IOrderInfo | null>();
@@ -38,12 +39,13 @@ const PaymentPage = () => {
         <div className={styles.leftBlock}>
           <InfoBlock time={currentTime} />
           <Steps />
-          <PayBlockFirstStage
+          {/*           <PayBlockFirstStage
             sum={orderInfo?.data.sum || "0"}
             paymentMethod={orderInfo?.data.payment_method || 0}
             requisites={orderInfo?.data.requisites || ""}
             price={orderInfo?.data.price || "0"}
-          />
+          /> */}
+          <PayBlockSecondStageSeller />
         </div>
         <div className={styles.rightBlock}>
           <Chat myName={userInfo?.data.login || ""} />

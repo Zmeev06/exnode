@@ -5,30 +5,16 @@ import { useParams } from "react-router-dom";
 
 interface InfoBlockProps {
   time: string;
+  m: number;
+  s:number;
 }
-const InfoBlock = ({ time }: InfoBlockProps) => {
-  const [[m, s], setTime] = useState([15, 0]);
-  const [over, setOver] = useState(false);
+const InfoBlock = ({ time, m, s }: InfoBlockProps) => {
+  
   const [timerValue, setTimerValue] = useState(100);
 
   const { id } = useParams();
 
-  const tick = () => {
-    if (m === 0 && s === 0) {
-      setOver(true);
-    } else if (s === 0) {
-      setTime([m - 1, 59]);
-    } else {
-      setTime([m, s - 1]);
-    }
-  };
-
-  React.useEffect(() => {
-    const timerID = setInterval(() => tick(), 1000);
-    return () => {
-      clearInterval(timerID);
-    };
-  });
+  
 
   React.useEffect(() => {
     const timerValueChange = setInterval(

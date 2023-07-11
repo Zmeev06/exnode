@@ -14,7 +14,8 @@ const PaymentPage = () => {
   const [orderInfo, setOrderInfo] = useState<IOrderInfo | null>();
   const [userInfo, setUserInfo] = useState<IProfile | null>();
   const token = localStorage.getItem("token") || "";
-  console.log(token);
+  const [steps, setSteps] = useState(1);
+  
   const getOrderInformation = async () => {
     const { data } = await getOrderInfo(token.replace(/"/g, ""), 1);
     setOrderInfo(data);
@@ -32,18 +33,41 @@ const PaymentPage = () => {
     getOrderInformation();
     getUserName();
   }, []);
+  const [[m, s], setTime] = useState([0, 10]);
+  const [over, setOver] = useState(false);
+  const tick = () => {
+    if (m === 0 && s === 0) {
+      setOver(true);
+    } else if (s === 0) {
+      setTime([m - 1, 59]);
+    } else {
+      setTime([m, s - 1]);
+    }
+  };
 
+  React.useEffect(() => {
+    const timerID = setInterval(() => tick(), 1000);
+    return () => {
+      clearInterval(timerID);
+    };
+  });
+
+  
   return (
     <Container>
       <div className={styles.main}>
         <div className={styles.leftBlock}>
-          <InfoBlock time={currentTime} />
-          <Steps />
+          <InfoBlock time={currentTime} m={m} s={s}/>
+          <Steps step={steps} />
           <PayBlockFirstStage
             sum={orderInfo?.data.sum || "0"}
             paymentMethod={orderInfo?.data.payment_method || 0}
             requisites={orderInfo?.data.requisites || ""}
             price={orderInfo?.data.price || "0"}
+            setStep={setSteps}
+            step={steps}
+            m={m}
+            s={s}
           />
           {/*      <PayBlockSecondStageSeller /> */}
         </div>

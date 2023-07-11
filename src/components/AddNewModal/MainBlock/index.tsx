@@ -5,6 +5,7 @@ import AddNewModalSwitch from "../Switch";
 import AddNewSteps from "../Steps";
 import FirstStepContentModal from "../FirstStepContent";
 import SecondStepContent from "../SecondStepContent";
+import ThirdStepContent from "../ThirdStepContent";
 
 interface AddNewModalProps {
   isOpen: boolean;
@@ -32,7 +33,7 @@ const AddNewModal = ({ isOpen, setIsOpen }: AddNewModalProps) => {
         ) : step === 2 ? (
           <SecondStepContent />
         ) : (
-          <div></div>
+          <ThirdStepContent />
         )}
         <div
           className={styles.btn}

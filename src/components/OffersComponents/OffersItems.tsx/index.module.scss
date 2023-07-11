@@ -47,3 +47,8 @@
   color: $green;
   margin-left: 10px;
 }
+
+.content {
+  max-height: 300px;
+  overflow: scroll;
+}

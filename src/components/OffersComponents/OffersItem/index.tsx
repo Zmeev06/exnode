@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import { useNavigate } from "react-router-dom";
+import { getProfile } from "../../../services/profileServices";
 
 interface OffersItemProps {
   name: string;
@@ -20,6 +21,15 @@ const OffersItem = ({
   id,
 }: OffersItemProps) => {
   const navigate = useNavigate();
+  const [status, setStatus] = useState(false);
+  const token = localStorage.getItem("token")?.replace(/"/g, "") || "";
+  const getProfileFunc = async () => {
+    const { data } = await getProfile(token);
+    data !== "isError" && setStatus(true);
+  };
+  useEffect(() => {
+    getProfileFunc()
+  })
   return (
     <div className={styles.main}>
       <div className={styles.items}>
@@ -53,7 +63,7 @@ const OffersItem = ({
         <div className={styles.item5}>
           <div
             className={styles.btn}
-            onClick={() => navigate(`/offer/buy/${id}`)}
+            onClick={() => navigate(`/soffer/buy/${id}`)}
           >
             <p>
               {`Купить ${

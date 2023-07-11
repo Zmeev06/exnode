@@ -1,0 +1,94 @@
+@import '../../../stylesVariables/colors.scss';
+
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  font-size: 14px;
+  color: $lightPurpuleText;
+}
+
+.mainInput {
+  width: 350px;
+  height: 40px;
+  border: 1px solid $btnBlue;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 82px;
+  &Block {
+    position: relative;
+    margin: 10px 0;
+  }
+}
+
+.mainLabel {
+  position: absolute;
+  top: 25%;
+  right: 10px;
+}
+
+.limits {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inputBlock {
+  position: relative;
+}
+
+.input {
+  width: 165px;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 42px;
+  border: 1px solid $btnBlue;
+  border-radius: 10px;
+}
+
+.currency, .currency2 {
+  position: absolute;
+}
+
+.currency {
+  top: 25%;
+  right: 10px;
+}
+
+.currency2 {
+  top: 25%;
+  right: 10px;
+}
+
+.limitBlock {
+  display: flex;
+  width: 45%;
+  align-items: center;
+}
+
+.counterBlock {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+  font-size: 14px;
+}
+
+.counter {
+  color: $btnBlue;
+  margin-left: 4px;
+}
+
+.select {
+  width: 260px;
+  height: 40px;
+  border: 1px solid $btnBlue;
+  border-radius: 10px;
+  margin-top: 6px;
+  margin-bottom: 47px;
+}
+
+.subTitle {
+  margin-top: 10px;
+}

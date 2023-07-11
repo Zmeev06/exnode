@@ -40,3 +40,22 @@
 .title {
   font-size: 24px;
 }
+
+.btn {
+  width: 140px;
+  height: 40px;
+  background-color: $btnBlue;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: .3s;
+  &:hover {
+    background-color: #ffffff00;
+    border: 1px solid $btnBlue;
+  }
+}

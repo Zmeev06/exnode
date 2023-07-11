@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 import arrow from "../../../assets/icons/arrow-right.svg";
 import ContentBlock from "../../UI/ContentBlock";
 
-const FirstStepContentModal = ({}) => {
+const FirstStepContentModal = () => {
   const [type, setType] = useState("notFix");
   const [price, setPrice] = useState(10);
   const [percents, setPercents] = useState(111);
@@ -123,9 +123,7 @@ const FirstStepContentModal = ({}) => {
           </ContentBlock>
         )}
       </div>
-      <div className={styles.btn}>
-        <p>Далее</p>
-      </div>
+      
     </div>
   );
 };

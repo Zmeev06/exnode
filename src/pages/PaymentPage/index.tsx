@@ -33,7 +33,7 @@ const PaymentPage = () => {
     getOrderInformation();
     getUserName();
   }, []);
-  const [[m, s], setTime] = useState([0, 10]);
+  const [[m, s], setTime] = useState([15, 0]);
   const [over, setOver] = useState(false);
   const tick = () => {
     if (m === 0 && s === 0) {

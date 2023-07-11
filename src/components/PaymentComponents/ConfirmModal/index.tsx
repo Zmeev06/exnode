@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./index.module.scss";
 import file from "../../../assets/img/payment/file.svg";
 import { ReactComponent as Cross } from "../../../assets/icons/cross.svg";
@@ -10,6 +10,7 @@ interface ConfirmModalProps {
 }
 
 const ConfirmModal = ({ setIsOpen, setStep }: ConfirmModalProps) => {
+  const [checkedInput, setCheckedInput] = useState(false);
   return (
     <div className={styles.popup} onClick={() => setIsOpen(false)}>
       <div className={styles.popup__block} onClick={(e) => e.stopPropagation()}>
@@ -44,7 +45,11 @@ const ConfirmModal = ({ setIsOpen, setStep }: ConfirmModalProps) => {
         </div>
         <div className={styles.popup__checboxs}>
           <div className={styles.popup__checbox}>
-            <input type="checkbox" id="checked" />
+            <input
+              type="checkbox"
+              id="checked"
+              onChange={(e) => setCheckedInput(e.target.checked)}
+            />
             <label htmlFor="checked">
               <img src={checked} alt="" />
             </label>
@@ -55,8 +60,8 @@ const ConfirmModal = ({ setIsOpen, setStep }: ConfirmModalProps) => {
           <button
             className={styles.popup__yes}
             onClick={() => {
-              setStep(2)
-              setIsOpen(false)
+              checkedInput && setStep(2);
+              checkedInput && setIsOpen(false);
             }}
           >
             Подтвердить оплату

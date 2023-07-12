@@ -9,23 +9,28 @@ import OffersItems from "../OffersItems.tsx";
 
 const OffersBlock = () => {
   const [offersType, setOffersType] = useState<number>(1);
+  const [currency, setCurrency] = useState(1)
   const [offers, setOffers] = useState<IOfferData[]>();
   const token = localStorage.getItem("token") || "";
 
   const getOffers = async () => {
-    const { data } = await getOffersByType(offersType, token);
+    const { data } = await getOffersByType(offersType, token, currency);
     setOffers(data.data);
   };
 
   useEffect(() => {
     getOffers();
-  }, [offersType]);
+  }, [offersType, currency]);
   return (
     <Container>
       <div className={styles.main}>
-        <OffesrTopBlock type={offersType} setType={setOffersType} />
+        <OffesrTopBlock type={offersType} setType={setOffersType} setCurrency={setCurrency} currency={currency}/>
         <OffersFilters />
-        <OffersItems data={offers || []} />
+        {offers?.length !== 0  ? (
+          <OffersItems data={offers || []} />
+        ) : (
+          <p className={styles.offersNull}>Активных офферов нет</p>
+        )}
       </div>
     </Container>
   );

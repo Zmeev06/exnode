@@ -31,31 +31,62 @@ const Trade = () => {
                 Продажа криптовалюты
               </button>
             </div>
-            <div className={styles.steps}>
-              <div className={styles.step}>
-                <h3 className={styles.stepTitle}>Оффер</h3>
-                <p className={styles.stepText}>
-                  Как только вы отправите оффер о покупке, DCX-P2P немедленно
-                  заморозит для вас криптовалюту.
-                </p>
+            {activeBtn === 0 ? (
+              <div className={styles.steps}>
+                <div className={styles.step}>
+                  <h3 className={styles.stepTitle}>Оффер</h3>
+                  <p className={styles.stepText}>
+                    Как только вы отправите оффер о покупке, DCX-P2P немедленно
+                    заморозит для вас криптовалюту.
+                  </p>
+                </div>
+                <div className={styles.step}>
+                  <h3 className={styles.stepTitle}>Оплата</h3>
+                  <p className={styles.stepText}>
+                    Убедитесь, что вы отправили продавцу точную сумму, используя
+                    любой из доступных способов оплаты. После завершения
+                    перевода нажмите кнопку «Оплачено», чтобы подтвердить
+                    транзакцию
+                  </p>
+                </div>
+                <div className={styles.step}>
+                  <h3 className={styles.stepTitle}>Получение</h3>
+                  <p className={styles.stepText}>
+                    Как только продавец подтвердит платеж, замороженная
+                    криптовалюта будет незамедлительно переведена на кошелек
+                    вашего аккаунта.
+                  </p>
+                </div>
               </div>
-              <div className={styles.step}>
-                <h3 className={styles.stepTitle}>Оплата</h3>
-                <p className={styles.stepText}>
-                  Убедитесь, что вы отправили продавцу точную сумму, используя
-                  любой из доступных способов оплаты. После завершения перевода
-                  нажмите кнопку «Оплачено», чтобы подтвердить транзакцию
-                </p>
+            ) : (
+              <div className={styles.steps}>
+                <div className={styles.step}>
+                  <h3 className={styles.stepTitle}>Размещение оффера</h3>
+                  <p className={styles.stepText}>
+                    Как только вы разместите предложение о продаже, криптовалюта
+                    будет временно заблокирована на сайте DCX-P2P до завершения
+                    транзакции.
+                  </p>
+                </div>
+                <div className={styles.step}>
+                  <h3 className={styles.stepTitle}>Подтверждение оплаты</h3>
+                  <p className={styles.stepText}>
+                    Проверьте информацию об оплате в соответствующем платежном
+                    аккаунте и убедитесь, что детали транзакции соответствуют
+                    предложению. После подтверждения нажмите кнопку
+                    «Подтвердить».
+                  </p>
+                </div>
+                <div className={styles.step}>
+                  <h3 className={styles.stepTitle}>Получение</h3>
+                  <p className={styles.stepText}>
+                    Как только платеж будет подтвержден, криптовалюта будет
+                    автоматически отправлена покупателю, тем самым завершив
+                    транзакцию.
+                  </p>
+                </div>
               </div>
-              <div className={styles.step}>
-                <h3 className={styles.stepTitle}>Получение</h3>
-                <p className={styles.stepText}>
-                  Как только продавец подтвердит платеж, замороженная
-                  криптовалюта будет незамедлительно переведена на кошелек
-                  вашего аккаунта.
-                </p>
-              </div>
-            </div>
+            )}
           </div>
           <div className={styles.rightSide}>
             <img src={Screens} alt="" />

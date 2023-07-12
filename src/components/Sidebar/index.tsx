@@ -11,7 +11,7 @@ import ForkIcon from "../../assets/icons/profile/sidebar/7_fork.svg";
 import SettingsIcon from "../../assets/icons/profile/sidebar/8_settings.svg";
 
 interface SidebarProps {
-  className?: string
+  className?: string;
 }
 
 const sidebarItems = [
@@ -57,7 +57,7 @@ const sidebarItems = [
   },
 ];
 
-const Sidebar = ({className} : SidebarProps) => {
+const Sidebar = ({ className }: SidebarProps) => {
   const [activeSidebarItem, setActiveSidebarItem] = useState(0);
 
   return (

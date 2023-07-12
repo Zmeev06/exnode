@@ -1,6 +1,7 @@
-@import '../../stylesVariables/colors.scss';
+@import "../../stylesVariables/colors.scss";
 
 .main {
+  height: 86px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,7 +11,7 @@
   }
 }
 
-.nav{
+.nav {
   display: flex;
   justify-content: space-between;
   width: 750px;
@@ -22,7 +23,6 @@
       margin-left: 8px;
     }
   }
-
 }
 
 .newBlock {
@@ -54,10 +54,10 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  transition: .3s;
+  transition: 0.3s;
   cursor: pointer;
   &:hover {
-    background-color: #FFFFFF00;
+    background-color: #ffffff00;
   }
 }
 

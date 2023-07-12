@@ -20,13 +20,17 @@
 .wrap {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+
+  @media (max-width: 1200px) {
+    flex-wrap: wrap;
+  }
 }
 
 .block {
   padding: 40px 20px;
   height: fit-content;
   min-width: 326px;
+  border: 2px solid $btnBlue;
 }
 
 .blockItem {
@@ -44,6 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
   }
 
   &Title {

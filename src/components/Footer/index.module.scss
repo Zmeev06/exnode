@@ -6,9 +6,12 @@
 
   @media (max-width: 840px) {
     flex-direction: column;
-    align-items: center;
     margin-top: 57px;
   }
+}
+
+.logo {
+  cursor: pointer;
 }
 
 .contacts {

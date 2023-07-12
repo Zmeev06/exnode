@@ -1,9 +1,9 @@
 @import "../../stylesVariables/colors.scss";
 
 .root {
-  width: 286px;
+  width: 300px;
   border-right: 6px solid transparent;
-  height: 100%; // не реагирует почему-то
+  height: fit-content;
   padding: 10px 0;
   gap: 20px;
   border-radius: 20px;

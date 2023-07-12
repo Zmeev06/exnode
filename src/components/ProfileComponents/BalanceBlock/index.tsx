@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import ContentBlock from "../../UI/ContentBlock";
 import styles from "./index.module.scss";
 // import arrow from "../../../../assets/profile/icons/out.svg";
@@ -9,19 +8,12 @@ import arrow2 from "../../../assets/icons/profile/balance/2_iconoir_database-exp
 import add from "../../../assets/icons/profile/balance/3_iconoir_database-export.svg";
 import exchange from "../../../assets/icons/profile/balance/4_iconoir_database-export.svg";
 import TextButton from "../../UI/TextButton";
-import PayInModal from "../../Modals/PayInModal";
-import PayOutModal from "../../Modals/PayOutModal";
-import NewPayMethod from "../../Modals/NewPayMethod";
 
 interface BalanceBlockProps {
   balance: number;
 }
 
 const BalanceBlock = ({ balance }: BalanceBlockProps) => {
-  const [isOpenPayInModal, setIsOpenPayInModal] = useState(false);
-  const [isOpenPayOutModal, setIsOpenPayOutModal] = useState(false);
-  const [isOpenNewPayMethod, setIsOpenNewPayMethod] = useState(false);
-
   return (
     <div className={styles.main}>
       <ContentBlock className={styles.content}>
@@ -40,17 +32,11 @@ const BalanceBlock = ({ balance }: BalanceBlockProps) => {
           <p className={styles.frozen}>Заморожено: 0.00 USDT</p>
         </div>
         <div className={styles.btnsBlock}>
-          <div
-            onClick={() => setIsOpenPayInModal(true)}
-            className={styles.btnBlock}
-          >
+          <div className={styles.btnBlock}>
             <img src={arrow} alt="" className={`${styles.img}`} />
             <p className={styles.btnText}>Ввод</p>
           </div>
-          <div
-            onClick={() => setIsOpenPayOutModal(true)}
-            className={styles.btnBlock}
-          >
+          <div className={styles.btnBlock}>
             <img src={arrow2} alt="" className={`${styles.img}`} />
             <p className={styles.btnText}>Вывод</p>
           </div>
@@ -73,22 +59,9 @@ const BalanceBlock = ({ balance }: BalanceBlockProps) => {
         </div>
       </ContentBlock>
       <TextButton
-        onClick={() => setIsOpenNewPayMethod(true)}
         text="Перейти в кошелек"
         width={330}
         className={styles.bottomBtn}
-      />
-      <PayInModal
-        isOpenModal={isOpenPayInModal}
-        setIsOpenModal={setIsOpenPayInModal}
-      />
-      <PayOutModal
-        isOpenModal={isOpenPayOutModal}
-        setIsOpenModal={setIsOpenPayOutModal}
-      />
-      <NewPayMethod
-        isOpenModal={isOpenNewPayMethod}
-        setIsOpenModal={setIsOpenNewPayMethod}
       />
     </div>
   );

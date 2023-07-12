@@ -7,7 +7,6 @@ import { ReactComponent as VK } from "../../assets/icons/footer/vk.svg.svg";
 import { ReactComponent as Vcru } from "../../assets/icons/footer/vcru.svg.svg";
 import { ReactComponent as Email } from "../../assets/icons/footer/email.svg";
 import FooterItem from "./FooterItem";
-import { useNavigate } from "react-router";
 
 const data = [
   {
@@ -35,12 +34,10 @@ const data = [
 ];
 
 const Footer = () => {
-  const navigate = useNavigate();
-
   return (
     <div className={styles.root}>
       <div className={styles.contactBlock}>
-        <div onClick={() => navigate("/")}>
+        <div>
           <img src={Logo} alt="" className={styles.logo} />
         </div>
         <div className={styles.contacts}>

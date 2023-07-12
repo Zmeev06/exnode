@@ -39,17 +39,3 @@ export const getMessages = async (order_id: number, token: string) => {
     },
   });
 };
-
-export const createOrder = async (token: string, id: number, summ:number) => {
-  return await ApiClient({
-    url: "order/create",
-    method: "POST",
-    headers: {
-      Authorization: `${token}`,
-    },
-    data: {
-      offer_id: id,
-      sum: summ
-    },
-  });
-};

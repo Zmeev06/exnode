@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./index.module.scss";
 import { useNavigate } from "react-router-dom";
-import { getProfile } from "../../../services/profileServices";
-import OpenOffer from "../OpenOffer";
-import OffersItemContent from "../OffersItemContent";
 
 interface OffersItemProps {
   name: string;
@@ -12,7 +9,6 @@ interface OffersItemProps {
   limit_end: number;
   currency: number;
   id: number;
-  paymentMethod: number;
 }
 
 const OffersItem = ({
@@ -22,40 +18,52 @@ const OffersItem = ({
   limit_end,
   currency,
   id,
-  paymentMethod,
 }: OffersItemProps) => {
   const navigate = useNavigate();
-  const [status, setStatus] = useState(false);
-  const token = localStorage.getItem("token")?.replace(/"/g, "") || "";
-  const [isOpen, setIsOpen] = useState(false);
-  const getProfileFunc = async () => {
-    const { data } = await getProfile(token);
-    data !== "isError" && setStatus(true);
-  };
-  useEffect(() => {
-    getProfileFunc();
-  });
-  return !isOpen ? (
-    <OffersItemContent
-      name={name}
-      price={price}
-      limit_end={limit_end}
-      limit_start={limit_start}
-      paymentMethod={paymentMethod}
-      id={id}
-      setIsOpen={setIsOpen}
-      currency={currency}
-    />
-  ) : (
-    <OpenOffer
-      price={price}
-      paymentMethod={paymentMethod}
-      limit_start={limit_start}
-      name={name}
-      currency={currency}
-      setIsOpen={setIsOpen}
-      id={id}
-    />
+  return (
+    <div className={styles.main}>
+      <div className={styles.items}>
+        <div className={styles.item1}>
+          <div className={styles.profile}></div>
+          <p className={styles.username}>{name}</p>
+        </div>
+        <div className={styles.item2}>
+          <p>{price}</p>
+          <p className={styles.currency}>RUB</p>
+        </div>
+        <div className={styles.item3}>
+          <div className={styles.limit}>
+            <p className={styles.limitTitle}>Доступно</p>
+            <p>
+              {`${limit_start} ${
+                currency === 1 ? "USDT" : currency === 2 ? "BTC" : "ETH"
+              }`}
+            </p>
+          </div>
+          <div className={styles.limit}>
+            <p className={styles.limitTitle}>Лимит</p>
+            <p>{limit_end} RUB</p>
+          </div>
+        </div>
+        <div className={styles.item4}>
+          <div>
+            <p>QIWI</p>
+          </div>
+        </div>
+        <div className={styles.item5}>
+          <div
+            className={styles.btn}
+            onClick={() => navigate(`/offer/buy/${id}`)}
+          >
+            <p>
+              {`Купить ${
+                currency === 1 ? "USDT" : currency === 2 ? "BTC" : "ETH"
+              }`}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 export default OffersItem;

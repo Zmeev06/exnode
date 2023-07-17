@@ -7,7 +7,7 @@
 
 .title {
   font-size: 14px;
-  color: #FFFFFF70;
+  color: #ffffff70;
 }
 
 .value {
@@ -33,4 +33,27 @@
 
 .timerBlock {
   position: relative;
+}
+@media (max-width: 1200px) {
+  .main {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .value {
+    margin-top: 6px;
+  }
+  .main {
+    gap: 20px;
+  }
+
+  .timer {
+    width: 40px;
+    height: 40px;
+  }
+  .timerText {
+    top: 12px;
+    left: 4px;
+    font-size: 12px;
+  }
 }

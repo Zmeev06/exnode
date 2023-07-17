@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./index.module.scss";
 import OffersItem from "../OffersItem";
 import { IOfferData } from "../../../interfaces/serviceInterfaces";
-import { getProfile } from "../../../services/profileServices";
 
 interface OffersItemsProps {
   data: IOfferData[];
 }
 
-const OffersItems = ({ data }: OffersItemsProps) => {
+const OffersItems = ({
+  data
+}: OffersItemsProps) => {
   return (
     <div className={styles.main}>
       <div className={styles.titles}>
@@ -23,20 +24,16 @@ const OffersItems = ({ data }: OffersItemsProps) => {
           </div>
         </div>
       </div>
-      <div className={styles.content}>
-        {data.map((item, index) => (
-          <OffersItem
-            name={item.user.login}
-            price={item.price}
-            limit_end={item.limit_end}
-            limit_start={item.limit_start}
-            currency={item.currency}
-            id={item.id}
-            paymentMethod={item.payment_method}
-            key={index}
-          />  
-        ))}
-      </div>
+      {data.map((item, index) => <OffersItem
+        name={item.user.login}
+        price={item.price}
+        limit_end={item.limit_end}
+        limit_start={item.limit_start}
+        currency={item.currency}
+        id={item.id}
+        key={index}
+      />)}
+      
     </div>
   );
 };

@@ -20,7 +20,7 @@ interface BalanceBlockProps {
 const BalanceBlock = ({ balance }: BalanceBlockProps) => {
   const [isOpenPayInModal, setIsOpenPayInModal] = useState(false);
   const [isOpenPayOutModal, setIsOpenPayOutModal] = useState(false);
-  const [isOpenNewPayMethod, setIsOpenNewPayMethod] = useState(false);
+  
 
   return (
     <div className={styles.main}>
@@ -73,7 +73,6 @@ const BalanceBlock = ({ balance }: BalanceBlockProps) => {
         </div>
       </ContentBlock>
       <TextButton
-        onClick={() => setIsOpenNewPayMethod(true)}
         text="Перейти в кошелек"
         width={330}
         className={styles.bottomBtn}
@@ -85,10 +84,6 @@ const BalanceBlock = ({ balance }: BalanceBlockProps) => {
       <PayOutModal
         isOpenModal={isOpenPayOutModal}
         setIsOpenModal={setIsOpenPayOutModal}
-      />
-      <NewPayMethod
-        isOpenModal={isOpenNewPayMethod}
-        setIsOpenModal={setIsOpenNewPayMethod}
       />
     </div>
   );

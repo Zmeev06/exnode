@@ -25,3 +25,12 @@ export const createOffer = async(type: number, token: string, currency: number, 
     },
   });
 };
+
+export const getAllSellerOrders = async (token: string) => {
+  return await ApiClient({
+    url: `order/seller`,
+    headers: {
+      Authorization: `${token}`,
+    },
+  });
+};

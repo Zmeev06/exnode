@@ -66,3 +66,17 @@ export const addPayMethod = async (token: string, title: string) => {
     },
   });
 };
+
+export const addMessageImg = async (token: string, img: string, order_id: string) => {
+  return await ApiClient({
+    url: "payment-method/create",
+    method: "POST",
+    headers: {
+      Authorization: `${token}`,
+    },
+    data: {
+      img,
+      order_id
+    },
+  });
+};

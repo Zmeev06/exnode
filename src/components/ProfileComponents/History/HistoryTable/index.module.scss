@@ -1,0 +1,56 @@
+@import "../../../../stylesVariables/colors.scss";
+
+.main {
+  width: 100%;
+  @media (max-width: 1250px) {
+    display: none;
+  }
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 100px 130px 46px 201px 100px 100px 100px 110px;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-top: 15px;
+  background-color: #29144bbe;
+}
+
+.filterItem {
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.itemBlock {
+  margin-top: 10px;
+  padding: 0 10px;
+  display: grid;
+  grid-template-columns: 100px 130px 46px 201px 100px 100px 100px 110px;
+  gap: 30px;
+  border-bottom: 1px solid $btnBlue;
+  padding-bottom: 4px;
+}
+
+.operations {
+  &Top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+  &Btn {
+    border-radius: 8px;
+    background-color: $btnBlue;
+    padding: 10px 20px;
+    width: 100%;
+    min-width: 120px;
+    color: $lightPurpuleText;
+    font-family: RobotoFlex;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}

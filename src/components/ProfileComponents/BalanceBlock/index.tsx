@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import ContentBlock from "../../UI/ContentBlock";
 import styles from "./index.module.scss";
 // import arrow from "../../../../assets/profile/icons/out.svg";
@@ -10,7 +11,6 @@ import exchange from "../../../assets/icons/profile/balance/4_iconoir_database-e
 import TextButton from "../../UI/TextButton";
 import PayInModal from "../../Modals/PayInModal";
 import PayOutModal from "../../Modals/PayOutModal";
-import { useState } from "react";
 
 interface BalanceBlockProps {
   balance: number;
@@ -20,7 +20,6 @@ const BalanceBlock = ({ balance }: BalanceBlockProps) => {
   const [isOpenPayInModal, setIsOpenPayInModal] = useState(false);
   const [isOpenPayOutModal, setIsOpenPayOutModal] = useState(false);
   const [isOpenNewPayMethod, setIsOpenNewPayMethod] = useState(false);
-  
 
   return (
     <div className={styles.main}>

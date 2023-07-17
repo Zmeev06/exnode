@@ -5,3 +5,12 @@ export const getOffersByType = async (type: number, token: string) => {
     url: `offer?type=${type}`,
   });
 };
+
+export const getAllSellerOrders = async (token: string) => {
+  return await ApiClient({
+    url: `order/seller`,
+    headers: {
+      Authorization: `${token}`,
+    },
+  });
+};

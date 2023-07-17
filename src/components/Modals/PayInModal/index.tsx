@@ -29,7 +29,6 @@ const PayInModal = ({ isOpenModal, setIsOpenModal }: PayInModalProps) => {
     const { data } = await payInMethod(token, currency);
     setPayToken(data.data.token);
     setQr(data.data.qrcode);
-    console.log(data);
   };
 
   useEffect(() => {

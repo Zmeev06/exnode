@@ -8,6 +8,9 @@ import arrow2 from "../../../assets/icons/profile/balance/2_iconoir_database-exp
 import add from "../../../assets/icons/profile/balance/3_iconoir_database-export.svg";
 import exchange from "../../../assets/icons/profile/balance/4_iconoir_database-export.svg";
 import TextButton from "../../UI/TextButton";
+import PayInModal from "../../Modals/PayInModal";
+import PayOutModal from "../../Modals/PayOutModal";
+import { useState } from "react";
 
 interface BalanceBlockProps {
   balance: number;
@@ -17,6 +20,7 @@ const BalanceBlock = ({ balance }: BalanceBlockProps) => {
   const [isOpenPayInModal, setIsOpenPayInModal] = useState(false);
   const [isOpenPayOutModal, setIsOpenPayOutModal] = useState(false);
   const [isOpenNewPayMethod, setIsOpenNewPayMethod] = useState(false);
+  
 
   return (
     <div className={styles.main}>

@@ -4,6 +4,7 @@ import PayBlock from "../../UI/PayBlock";
 
 import ConfirmModal from "../ConfirmModal";
 import CancelModal from "../CancelModal";
+import { IOrderInfo } from "../../../interfaces/serviceInterfaces";
 
 // import ContentBlock from "../../UI/ContentBlock";
 // import TextButton from "../../UI/TextButton";
@@ -17,6 +18,7 @@ interface PayBlockFirstStageProps {
   step: number;
   m: number;
   s: number;
+  order: IOrderInfo
 }
 
 const PayBlockFirstStage = ({
@@ -28,6 +30,7 @@ const PayBlockFirstStage = ({
   step,
   m,
   s,
+  order
 }: PayBlockFirstStageProps) => {
   const [isOpenConfirm, setIsOpenConfirm] = useState(false);
   const [isOpenCancel, setIsOpenCancel] = useState(false);
@@ -98,7 +101,7 @@ const PayBlockFirstStage = ({
         </div>
       </PayBlock>
       {isOpenConfirm && (
-        <ConfirmModal setIsOpen={setIsOpenConfirm} setStep={setStep} />
+        <ConfirmModal setIsOpen={setIsOpenConfirm} setStep={setStep} id={order.data.id}/>
       )}
       {isOpenCancel && <CancelModal setIsOpen={setIsOpenCancel}/>}
     </>

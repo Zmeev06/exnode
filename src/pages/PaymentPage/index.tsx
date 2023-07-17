@@ -15,7 +15,7 @@ const PaymentPage = () => {
   const [userInfo, setUserInfo] = useState<IProfile | null>();
   const token = localStorage.getItem("token") || "";
   const [steps, setSteps] = useState(1);
-  
+
   const getOrderInformation = async () => {
     const { data } = await getOrderInfo(token.replace(/"/g, ""), 1);
     setOrderInfo(data);
@@ -52,12 +52,11 @@ const PaymentPage = () => {
     };
   });
 
-  
   return (
     <Container>
       <div className={styles.main}>
         <div className={styles.leftBlock}>
-          <InfoBlock time={currentTime} m={m} s={s}/>
+          <InfoBlock time={currentTime} m={m} s={s} />
           <Steps step={steps} />
           <PayBlockFirstStage
             sum={orderInfo?.data.sum || "0"}
@@ -68,6 +67,20 @@ const PaymentPage = () => {
             step={steps}
             m={m}
             s={s}
+            order={
+              orderInfo || {
+                success: false,
+                data: {
+                  id: 0,
+                  created_at: 0,
+                  status: 0,
+                  sum: "",
+                  price: "",
+                  requisites: "",
+                  payment_method: 0,
+                },
+              }
+            }
           />
           {/*      <PayBlockSecondStageSeller /> */}
         </div>

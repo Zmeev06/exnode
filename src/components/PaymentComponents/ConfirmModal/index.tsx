@@ -1,16 +1,41 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import styles from "./index.module.scss";
 import file from "../../../assets/img/payment/file.svg";
 import { ReactComponent as Cross } from "../../../assets/icons/cross.svg";
 import checked from "../../../assets/img/payment/checked.svg";
+import { addMessageImg } from "../../../services/paymentService";
 
 interface ConfirmModalProps {
   setIsOpen: (isOpen: boolean) => void;
   setStep: (step: number) => void;
+  id: number;
 }
 
-const ConfirmModal = ({ setIsOpen, setStep }: ConfirmModalProps) => {
+const ConfirmModal = ({ setIsOpen, setStep, id }: ConfirmModalProps) => {
   const [checkedInput, setCheckedInput] = useState(false);
+  const [photoList, setPhotoList] = useState<string | ArrayBuffer | null>();
+  const token = localStorage.getItem("token") || "";
+
+  const sendFile = async () => {
+    console.log(photoList)
+    const {data } = await addMessageImg(token, photoList, id)
+    console.log(data)
+  }
+
+  const getBase64 = (file: File) => {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      setPhotoList(reader.result)
+    };
+  };
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const file = e.target.files[0];
+      getBase64(file);
+    }
+  };
+
   return (
     <div className={styles.popup} onClick={() => setIsOpen(false)}>
       <div className={styles.popup__block} onClick={(e) => e.stopPropagation()}>
@@ -33,16 +58,26 @@ const ConfirmModal = ({ setIsOpen, setStep }: ConfirmModalProps) => {
           1. Загрузите подтверждение оплаты <span>*</span>
         </div>
         <div className={styles.popup__text}>
-          Загрузите и отправьте продавцу минимум одно подтверждение оплаты.
-          Загружаемые файлы должны быть в формате .jpg; .jpeg или .png.
+          Загрузите и отправьте подтверждение оплаты. Загружаемые файлы должны
+          быть в формате .jpg; .jpeg или .png.
         </div>
+        <div className={styles.imgBlock}>
         <div className={styles.popup__file}>
-          <input type="file" id="fileInput" />
+          <input
+            type="file"
+            id="fileInput"
+            onChange={(e) => {
+              handleFileChange(e);
+            }}
+          />
           <label htmlFor="fileInput">
             <img src={file} alt="" />
             Загрузить
           </label>
         </div>
+        {photoList && <p className={styles.fileInfo}>Вы загрузили изображение</p>}
+        </div>
+        
         <div className={styles.popup__checboxs}>
           <div className={styles.popup__checbox}>
             <input
@@ -62,6 +97,7 @@ const ConfirmModal = ({ setIsOpen, setStep }: ConfirmModalProps) => {
             onClick={() => {
               checkedInput && setStep(2);
               checkedInput && setIsOpen(false);
+              sendFile()
             }}
           >
             Подтвердить оплату

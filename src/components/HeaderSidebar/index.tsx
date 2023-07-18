@@ -7,16 +7,17 @@ import arrow from "../../assets/img/header/arrow.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getProfile } from "../../services/profileServices";
 import AuthorizationBlock from "../AuthorizationComponents/AuthorizationBlock";
-import profile from "../../assets/img/header/profile.svg";
+import profile from '../../assets/img/header/profile.svg'
 import Sidebar from "../Sidebar";
+
 
 const HeaderSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const [openSidebar, setIsOpenSidebar] = useState(false);
+  const [openSidebar, setIsOpenSidebar] = useState(false)
   const [openModal, setOpenModal] = useState(false);
   const [status, setStatus] = useState(false);
-  const location = useLocation();
+  const location = useLocation()
   const token = localStorage.getItem("token")?.replace(/"/g, "") || "";
   const getProfileFunc = async () => {
     const { data } = await getProfile(token);
@@ -29,36 +30,30 @@ const HeaderSidebar = () => {
     <>
       <div className={styles.main}>
         <div className={styles.header}>
-          <img
-            src={logo}
-            alt=""
-            className={styles.logo}
-            onClick={() => navigate("/")}
-          />
+          <img src={logo} alt="" className={styles.logo} onClick={() => navigate("/")}/>
           <div className={styles.buregerBlock}>
-            {location.pathname === "/profile" && (
-              <img
-                src={profile}
-                alt=""
-                className={styles.profile}
-                onClick={() => setIsOpenSidebar(!openSidebar)}
-              />
-            )}
-            <img
-              src={isOpen ? cross : burger}
-              alt=""
-              className={styles.burger}
-              onClick={() => setIsOpen(!isOpen)}
-            />
+            {location.pathname === '/profile' && <img
+            src={profile}
+            alt=""
+            className={styles.profile}
+            onClick={() => setIsOpenSidebar(!openSidebar)}
+          />}
+          <img
+            src={isOpen ? cross : burger}
+            alt=""
+            className={styles.burger}
+            onClick={() => setIsOpen(!isOpen)}
+          />
           </div>
+          
         </div>
         <div className={`${styles.content} ${isOpen && styles.active}`}>
           <div className={styles.navigation}>
-            <div onClick={() => setIsOpen(false)} className={styles.navItem}>
+            <div className={styles.navItem}>
               <p>Купить криптовалюту</p>
               <img src={arrow} alt="" className={styles.navItemArrow} />
             </div>
-            <div onClick={() => setIsOpen(false)} className={styles.navItem}>
+            <div className={styles.navItem}>
               <div className={styles.newItem}>
                 <p>P2P-торговля</p>
                 <div className={styles.newBlock}>
@@ -66,17 +61,17 @@ const HeaderSidebar = () => {
                 </div>
               </div>
             </div>
-            <div onClick={() => setIsOpen(false)} className={styles.navItem}>
+            <div className={styles.navItem}>
               <p>DeFi</p>
             </div>
-            <div onClick={() => setIsOpen(false)} className={styles.navItem}>
+            <div className={styles.navItem}>
               <p>Процессинг</p>
             </div>
-            <div onClick={() => setIsOpen(false)} className={styles.navItem}>
+            <div className={styles.navItem}>
               <p>Статьи</p>
               <img src={arrow} alt="" className={styles.navItemArrow} />
             </div>
-            <div onClick={() => setIsOpen(false)} className={styles.navItem}>
+            <div className={styles.navItem}>
               <p>Поддержка</p>
               <img src={arrow} alt="" className={styles.navItemArrow} />
             </div>
@@ -84,10 +79,7 @@ const HeaderSidebar = () => {
               <>
                 <div
                   className={styles.loginBtn}
-                  onClick={() => {
-                    navigate("/profile");
-                    setIsOpen(false);
-                  }}
+                  onClick={() => navigate("/profile")}
                 >
                   <p>Профиль</p>
                 </div>
@@ -96,8 +88,7 @@ const HeaderSidebar = () => {
                   onClick={() => {
                     localStorage.setItem("token", "");
                     setStatus(false);
-                    setIsOpen(false);
-                    navigate("/");
+                    navigate('/')
                   }}
                 >
                   <p>Выйти</p>
@@ -119,9 +110,7 @@ const HeaderSidebar = () => {
         setOpenModal={setOpenModal}
         setStatus={setStatus}
       />
-      <Sidebar
-        className={`${styles.sidebar} ${openSidebar && styles.sidebarActive}`}
-      />
+      <Sidebar className={`${styles.sidebar} ${openSidebar && styles.sidebarActive}`}/>
     </>
   );
 };

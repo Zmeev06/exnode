@@ -64,7 +64,3 @@ export interface IOfferData {
   };
 }
 
-export interface IPhoto { 
-  img: string,
-  order_id: number
-}

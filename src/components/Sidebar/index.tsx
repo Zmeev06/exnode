@@ -11,9 +11,7 @@ import ForkIcon from "../../assets/icons/profile/sidebar/7_fork.svg";
 import SettingsIcon from "../../assets/icons/profile/sidebar/8_settings.svg";
 
 interface SidebarProps {
-  activeSidebarItem?: number;
-  setActiveSidebarItem?: (param: number) => void;
-  className?: string;
+  className?: string
 }
 
 const sidebarItems = [
@@ -59,11 +57,9 @@ const sidebarItems = [
   },
 ];
 
-const Sidebar = ({
-  className,
-  activeSidebarItem,
-  setActiveSidebarItem,
-}: SidebarProps) => {
+const Sidebar = ({className} : SidebarProps) => {
+  const [activeSidebarItem, setActiveSidebarItem] = useState(0);
+
   return (
     <div className={`${styles.root} ${className}`}>
       <div className={styles.top}>
@@ -73,7 +69,7 @@ const Sidebar = ({
       <div className={styles.sidebarItemContainer}>
         {sidebarItems.map((el, index) => (
           <Link
-            onClick={() => setActiveSidebarItem && setActiveSidebarItem(index)}
+            onClick={() => setActiveSidebarItem(index)}
             to={"/profile"}
             className={`${styles.sidebarItems} ${
               activeSidebarItem === index ? styles.sidebarItemsActive : ""

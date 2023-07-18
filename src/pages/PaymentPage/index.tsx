@@ -4,18 +4,16 @@ import { IOrderInfo, IProfile } from "../../interfaces/serviceInterfaces";
 import styles from "./index.module.scss";
 import InfoBlock from "../../components/PaymentComponents/InfoBLock";
 import Steps from "../../components/PaymentComponents/Steps";
-import PayBlockFirstStage from "../../components/PaymentComponents/PayBlockFirstStage";
+import PayBlock from "../../components/PaymentComponents/PayBlock";
 import Chat from "../../components/PaymentComponents/Chat";
 import { getProfile } from "../../services/profileServices";
 import Container from "../../components/UI/Container";
-import PayBlockSecondStageSeller from "../../components/PaymentComponents/PayBlockSecondStageSeller";
 
 const PaymentPage = () => {
   const [orderInfo, setOrderInfo] = useState<IOrderInfo | null>();
   const [userInfo, setUserInfo] = useState<IProfile | null>();
   const token = localStorage.getItem("token") || "";
-  const [steps, setSteps] = useState(1);
-
+  console.log(token);
   const getOrderInformation = async () => {
     const { data } = await getOrderInfo(token.replace(/"/g, ""), 1);
     setOrderInfo(data);
@@ -33,56 +31,19 @@ const PaymentPage = () => {
     getOrderInformation();
     getUserName();
   }, []);
-  const [[m, s], setTime] = useState([15, 0]);
-  const [over, setOver] = useState(false);
-  const tick = () => {
-    if (m === 0 && s === 0) {
-      setOver(true);
-    } else if (s === 0) {
-      setTime([m - 1, 59]);
-    } else {
-      setTime([m, s - 1]);
-    }
-  };
-
-  React.useEffect(() => {
-    const timerID = setInterval(() => tick(), 1000);
-    return () => {
-      clearInterval(timerID);
-    };
-  });
 
   return (
     <Container>
       <div className={styles.main}>
         <div className={styles.leftBlock}>
-          <InfoBlock time={currentTime} m={m} s={s} />
-          <Steps step={steps} />
-          <PayBlockFirstStage
+          <InfoBlock time={currentTime} />
+          <Steps />
+          <PayBlock
             sum={orderInfo?.data.sum || "0"}
             paymentMethod={orderInfo?.data.payment_method || 0}
             requisites={orderInfo?.data.requisites || ""}
             price={orderInfo?.data.price || "0"}
-            setStep={setSteps}
-            step={steps}
-            m={m}
-            s={s}
-            order={
-              orderInfo || {
-                success: false,
-                data: {
-                  id: 0,
-                  created_at: 0,
-                  status: 0,
-                  sum: "",
-                  price: "",
-                  requisites: "",
-                  payment_method: 0,
-                },
-              }
-            }
           />
-          {/*      <PayBlockSecondStageSeller /> */}
         </div>
         <div className={styles.rightBlock}>
           <Chat myName={userInfo?.data.login || ""} />

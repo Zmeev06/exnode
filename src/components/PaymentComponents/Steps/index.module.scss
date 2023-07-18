@@ -1,17 +1,16 @@
-@import '../../../stylesVariables/colors.scss';
+@import "../../../stylesVariables/colors.scss";
 
 .steps {
   display: flex;
   align-items: center;
   margin-top: 30px;
   justify-content: space-between;
-
 }
 
 .line {
   width: 130px;
   height: 4px;
-  border: 1px solid rgba(146, 79, 255, 0.30);
+  border: 1px solid rgba(146, 79, 255, 0.3);
   border-radius: 10px;
 }
 
@@ -22,8 +21,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(146, 79, 255, 0.30);
-  color: rgba(146, 79, 255, 0.30);
+  border: 1px solid rgba(146, 79, 255, 0.3);
+  color: rgba(146, 79, 255, 0.3);
 }
 
 .stepBlock {
@@ -44,7 +43,6 @@
 .descriptionBlock {
   display: flex;
   margin-top: 10px;
-  
 }
 .description {
   max-width: 150px;
@@ -55,4 +53,35 @@
 
 .centerNumber {
   margin: 0px 100px;
+}
+@media (max-width: 1400px) {
+  .line {
+    width: 70px;
+  }
+}
+@media (max-width: 1250px) {
+  .stepBlock {
+    width: 140px;
+  }
+}
+@media (max-width: 767px) {
+  .steps {
+    margin-top: 20px;
+  }
+  .numberBlock {
+    width: 20px;
+    height: 20px;
+    min-height: 20px;
+    font-size: 14px;
+  }
+  .stepBlock {
+    margin-top: 0;
+    height: 60px;
+  }
+
+  .line {
+    position: relative;
+    top: -19px;
+    width: 15px;
+  }
 }

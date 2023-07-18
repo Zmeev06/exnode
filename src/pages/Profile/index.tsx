@@ -9,8 +9,10 @@ import { getProfile } from "../../services/profileServices";
 import Sidebar from "../../components/Sidebar";
 import PaymentMethod from "../../components/ProfileComponents/PaymentMethod";
 import Container from "../../components/UI/Container";
+import History from "../../components/ProfileComponents/History";
 
 const Profile = () => {
+  const [activeSidebarItem, setActiveSidebarItem] = useState(0);
   const [profile, setProfile] = useState<IProfile | null>();
 
   const token = localStorage.getItem("token") || "";
@@ -26,12 +28,24 @@ const Profile = () => {
   return (
     <Container>
       <div className={styles.root}>
-        <Sidebar className={styles.sidebar} />
+        <Sidebar
+          activeSidebarItem={activeSidebarItem}
+          setActiveSidebarItem={setActiveSidebarItem}
+          className={styles.sidebar}
+        />
         <div className={styles.main}>
-          <ProfileTop name={profile?.data.login || ""} />
-          <OveralBalance balance={profile?.data.balance_usdt || 0} />
-          <Statistics />
-          <PaymentMethod />
+          {activeSidebarItem === 0 ? (
+            <>
+              <ProfileTop name={profile?.data.login || ""} />
+              <OveralBalance balance={profile?.data.balance_usdt || 0} />
+              <Statistics />
+              <PaymentMethod />
+            </>
+          ) : activeSidebarItem === 2 ? (
+            <History />
+          ) : (
+            <>такого еще нету</>
+          )}
           {/* <ProfileBottom /> */}
         </div>
       </div>

@@ -20,12 +20,13 @@
 }
 .summ {
   position: relative;
+  margin-bottom: 6px;
   &Text {
     color: $lightViolet;
   }
   &Input {
     width: 260px;
-    height: 46px;
+    height: 39px;
     border-radius: 6px;
     border: 1px solid $btnBlue;
     padding-left: 10px;
@@ -49,12 +50,12 @@
 .select {
   width: 260px;
   height: 46px;
-  border-radius: 6px;
-  border: 1px solid $btnBlue;
+}
+
+.select2 {
+  width: 260px;
+  height: 46px;
   margin-top: 10px;
-  color: #fff;
-  padding-left: 10px;
-  background-color: #ffffff00;
 }
 
 .menu {

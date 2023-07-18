@@ -10,6 +10,9 @@ interface OffersItemContentProps {
   id: number;
   paymentMethod: number;
   setIsOpen: (isOpen: boolean) => void;
+  status: boolean;
+  setIsOpenModal: (isOpen: boolean) => void;
+
 }
 
 const OffersItemContent = ({
@@ -19,7 +22,9 @@ const OffersItemContent = ({
   limit_end,
   currency,
   paymentMethod,
-  setIsOpen
+  setIsOpen,
+  setIsOpenModal,
+  status
 }: OffersItemContentProps) => {
   const payment = [
     "Сбербанк",
@@ -63,7 +68,7 @@ const OffersItemContent = ({
         <div className={styles.item5}>
           <div
             className={styles.btn}
-            onClick={() => setIsOpen(true)}
+            onClick={() => status ? setIsOpen(true) : setIsOpenModal(true)}
           >
             <p>
               {`Купить ${

@@ -6,11 +6,13 @@ import arrow from "../../assets/img/header/arrow.svg";
 import AuthorizationBlock from "../AuthorizationComponents/AuthorizationBlock";
 import { getProfile } from "../../services/profileServices";
 import { useNavigate } from "react-router";
+import PopUp from "./PopUp";
 
 const Header = () => {
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
   const [status, setStatus] = useState(false);
+  const [openPopUp, setOpenPopUp] = useState(false);
 
   const token = localStorage.getItem("token")?.replace(/"/g, "") || "";
   const getProfileFunc = async () => {
@@ -31,9 +33,13 @@ const Header = () => {
             onClick={() => navigate("/")}
           />
           <ul className={styles.nav}>
-            <li className={styles.navItem}>
+            <li
+              className={styles.navItem}
+              onClick={() => setOpenPopUp(!openPopUp)}
+            >
               <p className={styles.navItemText}>Купить криптовалюту</p>
               <img src={arrow} alt="" className={styles.navItemArrow} />
+              <PopUp isOpen={openPopUp} />
             </li>
             <li className={`${styles.navItem} ${styles.newItem}`}>
               <p

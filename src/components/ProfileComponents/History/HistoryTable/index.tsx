@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./index.module.scss";
 import ContentBlock from "../../../UI/ContentBlock";
 import { ReactComponent as Copy } from "../../../../assets/icons/copy.svg";
+import { ReactComponent as RollUp } from "../../../../assets/icons/FAQs/Button.svg";
+import HistoryTableItem from "./HistoryTableItem";
 
 const data = [
   {
@@ -54,24 +56,7 @@ const HistoryTable = () => {
       </div>
       <div>
         {data.map((el) => (
-          <div className={styles.itemBlock}>
-            <div className={styles.item}>
-              <h4 className={styles.saleTitle}>{el.type}</h4>
-              <span className={styles.saleId}>{el.id}</span>
-            </div>
-            <p className={styles.item}>{el.sum}</p>
-            <p className={styles.item}>{el.course}</p>
-            <p className={styles.item}>{el.courseInCrypt}</p>
-            <p className={styles.item}>{el.date}</p>
-            <p className={styles.item}>{el.counterparty}</p>
-            <p className={styles.item}>{el.status}</p>
-            <div className={`${styles.item} ${styles.operations}`}>
-              <div className={styles.operationsTop}>
-                <span>{el.operations}</span> <Copy />
-              </div>
-              <button className={styles.operationsBtn}>К деталям</button>
-            </div>
-          </div>
+          <HistoryTableItem {...el} />
         ))}
       </div>
     </ContentBlock>

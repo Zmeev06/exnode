@@ -5,6 +5,7 @@ import MainPage from "../pages/MainPage";
 import PaymentPage from "../pages/PaymentPage";
 import Profile from "../pages/Profile";
 
+
 function App() {
   return (
     <div className="App">
@@ -13,7 +14,6 @@ function App() {
           <Route path="" element={<MainPage />} />
           <Route path="offer/buy/:id" element={<PaymentPage />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="payment" element={<PaymentPage />} />
         </Route>
       </Routes>
     </div>

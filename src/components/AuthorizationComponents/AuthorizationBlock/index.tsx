@@ -12,25 +12,25 @@ interface AuthorizationBlockProps {
 const AuthorizationBlock = ({
   openModal,
   setOpenModal,
-  setStatus,
+  setStatus
 }: AuthorizationBlockProps) => {
   const [authType, setAuthType] = useState("login");
   return (
     <>
       {openModal && (
-        <div className={styles.main} onClick={() => setOpenModal(false)}>
-          <div className={styles.root} onClick={(e) => e.stopPropagation()}>
+        <>
+          <div
+            className={styles.main}
+            onClick={() => setOpenModal(false)}
+          ></div>
+          <div className={styles.root}>
             {authType === "login" ? (
-              <Login
-                setAuthType={setAuthType}
-                setOpenModal={setOpenModal}
-                setStatus={setStatus}
-              />
+              <Login setAuthType={setAuthType} setOpenModal={setOpenModal} setStatus={setStatus}/>
             ) : (
               <Register setAuthType={setAuthType} setOpenModal={setOpenModal} />
             )}
           </div>
-        </div>
+        </>
       )}
     </>
   );

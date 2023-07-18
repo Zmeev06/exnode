@@ -52,17 +52,8 @@
   border-radius: 6px;
   border: 1px solid $btnBlue;
   margin-top: 10px;
-  color: #fff;
+  color: $lightVioletText;
   padding-left: 10px;
-  background-color: #ffffff00;
-}
-
-.menu {
-  background-color: $darkViolet;
-}
-
-.option:hover {
-  background-color: $btnBlue;
 }
 
 .newOfferBtn {

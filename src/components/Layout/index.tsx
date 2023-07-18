@@ -9,7 +9,9 @@ import styles from "./index.module.scss";
 const Layout = () => {
   return (
     <>
-      <Header />
+      <Container>
+        <Header />
+      </Container>
       <HeaderSidebar />
       <div className={styles.content}>
         <Outlet />

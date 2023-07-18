@@ -1,4 +1,4 @@
-@import "../../../stylesVariables/colors.scss";
+@import '../../../stylesVariables/colors.scss';
 
 .main {
   width: 500px;
@@ -27,7 +27,7 @@
 }
 
 .bottomBlock {
-  background-color: rgba(27, 0, 74, 0.3);
+  background-color: rgba(27, 0, 74, 0.30);
   padding: 20px 15px;
   display: flex;
   align-items: center;
@@ -106,25 +106,4 @@
   margin-top: 5px;
   max-width: 390px;
   overflow: hidden;
-}
-@media (max-width: 1500px) {
-  .main {
-    width: 100%;
-  }
-}
-@media (max-width: 550px) {
-  .input {
-    margin-left: 0;
-  }
-  .input {
-    width: 100%;
-    flex: 0 1 100%;
-  }
-  .bottomBlock {
-    gap: 10px;
-  }
-  .inputBlock {
-    flex: 0 1 100%;
-    gap: 10px;
-  }
 }

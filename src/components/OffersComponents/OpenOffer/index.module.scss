@@ -1,0 +1,125 @@
+@import '../../../stylesVariables/colors.scss';
+
+.main {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid $lightPurpuleText;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.infoBlock {
+  width: 920px;
+  height: 544px;
+  background-color: $darkViolet;
+  border-radius: 10px;
+  padding: 20px
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #D5E6FF;
+  margin-right: 12px;
+}
+
+.profileBlock {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  margin: 20px 0px;
+  gap: 10px;
+  align-items: flex-end;
+  color: $lightPurpuleText;
+}
+
+.title {
+  color: rgba(242, 234, 255, 0.80);
+}
+
+.currency {
+  font-size: 14px;
+  color: rgba(242, 234, 255, 0.80);
+}
+.itemText {
+  font-weight: 700;
+}
+
+.form {
+  width: 467px;
+  height: 544px;
+  border-radius: 10px;
+  border: 1px solid $btnBlue;
+  padding: 20px;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid $btnBlue;
+  padding-left: 10px;
+  padding-right: 50px;
+  
+  &Block {
+    position: relative;
+    margin-top: 6px;
+  }
+  &Option {
+    position: absolute;
+    top: 25%;
+    right: 10px;
+    color: $btnBlue;
+  }
+}
+
+.payment {
+  margin: 20px 0;
+}
+
+.price {
+  margin-top: 6px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn {
+  width: 200px;
+  height: 40px;
+  background-color: $btnBlue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s;
+  &:hover {
+    background-color: #ffffff00;
+    border: 1px solid $btnBlue;
+  }
+}
+
+.closeBtn {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s;
+  &:hover {
+    border: 1px solid $btnBlue;
+    color: $btnBlue;
+  }
+}

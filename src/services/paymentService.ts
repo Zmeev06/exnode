@@ -40,7 +40,7 @@ export const getMessages = async (order_id: number, token: string) => {
   });
 };
 
-export const createOrder = async (token: string, id: number, summ: number) => {
+export const createOrder = async (token: string, id: number, summ:number) => {
   return await ApiClient({
     url: "order/create",
     method: "POST",
@@ -49,38 +49,7 @@ export const createOrder = async (token: string, id: number, summ: number) => {
     },
     data: {
       offer_id: id,
-      sum: summ,
-    },
-  });
-};
-
-export const addPayMethod = async (token: string, title: string) => {
-  return await ApiClient({
-    url: "payment-method/create",
-    method: "POST",
-    headers: {
-      Authorization: `${token}`,
-    },
-    data: {
-      title,
-    },
-  });
-};
-
-export const addMessageImg = async (
-  token: string,
-  img: string | ArrayBuffer | null | undefined,
-  order_id: number
-) => {
-  return await ApiClient({
-    url: "message/create-img",
-    method: "POST",
-    headers: {
-      Authorization: `${token}`,
-    },
-    data: {
-      img,
-      order_id,
+      sum: summ
     },
   });
 };

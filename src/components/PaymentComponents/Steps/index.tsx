@@ -1,11 +1,7 @@
 import React from "react";
 import styles from "./index.module.scss";
 
-interface StepsProps {
-  step: number;
-}
-
-const Steps = ({ step }: StepsProps) => {
+const Steps = () => {
   return (
     <div className={styles.main}>
       <div className={styles.steps}>
@@ -18,11 +14,7 @@ const Steps = ({ step }: StepsProps) => {
 
         <div className={styles.line}></div>
         <div className={styles.stepBlock}>
-          <div
-            className={`${styles.numberBlock} ${
-              (step === 3 || step === 2) && styles.active
-            }`}
-          >
+          <div className={styles.numberBlock}>
             <p className={styles.number}>2</p>
           </div>
           <p className={`${styles.description}  `}>
@@ -31,9 +23,7 @@ const Steps = ({ step }: StepsProps) => {
         </div>
         <div className={styles.line}></div>
         <div className={styles.stepBlock}>
-          <div
-            className={`${styles.numberBlock} ${step === 3 && styles.active}`}
-          >
+          <div className={styles.numberBlock}>
             <p className={styles.number}>3</p>
           </div>
           <p className={styles.description}>Завершение сделки</p>

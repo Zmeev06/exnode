@@ -7,10 +7,11 @@
   }
 }
 
-.filters {
+.filter {
   display: grid;
   grid-template-columns: 100px 130px 46px 201px 100px 100px 100px 110px;
   justify-content: space-between;
+  gap: 10px;
   border-radius: 10px;
   padding: 10px 16px;
   margin-top: 15px;
@@ -30,8 +31,17 @@
   display: grid;
   grid-template-columns: 100px 130px 46px 201px 100px 100px 100px 110px;
   justify-content: space-between;
+  gap: 10px;
   border-bottom: 1px solid $btnBlue;
   padding-bottom: 4px;
+}
+
+.item {
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 145%;
 }
 
 .saleTitle {

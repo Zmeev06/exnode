@@ -20,7 +20,10 @@
 .wrap {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+
+  @media (max-width: 1040px) {
+    flex-wrap: wrap;
+  }
 }
 
 .block {
@@ -34,6 +37,8 @@
   flex-direction: column;
   border-bottom: 2px solid $btnBlue;
   margin-top: 21px;
+  cursor: pointer;
+  user-select: none;
 
   &:first-child {
     margin-top: 0;
@@ -51,6 +56,10 @@
     font-family: RobotoFlex;
     font-size: 20px;
     font-weight: 600;
+
+    @media (max-width: 1150px) {
+      font-size: 18px;
+    }
 
     @media (max-width: 574px) {
       max-width: 280px;

@@ -145,30 +145,36 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2"
+    ". z3 z3 z3 z3 z3 z4 z4 z4 z4 z4 .";
   grid-column-gap: 21px;
   grid-row-gap: 19px;
 
   &Item {
-    grid-column: span 4;
+    &1 {
+      grid-area: z1;
+    }
+
+    &2 {
+      grid-area: z2;
+    }
 
     &3 {
-      grid-column: span 5;
+      grid-area: z3;
     }
 
     &4 {
-      grid-column: span 3;
+      grid-area: z4;
     }
   }
 
   @media (max-width: 946px) {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-
-    &Item {
-      grid-column: span 1;
-    }
+    grid-template-areas:
+      "z1"
+      "z2"
+      "z3"
+      "z4";
   }
 }

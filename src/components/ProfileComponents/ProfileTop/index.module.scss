@@ -23,6 +23,10 @@
 .userInfo {
   display: flex;
   gap: 18px;
+
+  @media (max-width: 390px) {
+    gap: 4px;
+  }
 }
 
 .iconWrap {

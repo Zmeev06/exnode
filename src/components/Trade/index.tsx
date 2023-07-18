@@ -64,7 +64,7 @@ const Trade = () => {
         <div className={styles.dcx}>
           <h2 className={styles.dcxTitle}>DCX - это про...</h2>
           <div className={styles.grid}>
-            <ContentBlock className={styles.gridItem}>
+            <ContentBlock className={`${styles.gridItem} ${styles.gridItem1}`}>
               <h3 className={styles.stepTitle}>Заработок</h3>
               <p className={styles.stepText}>
                 Наша миссия состоит в том, чтобы обеспечить глобальное получение
@@ -74,7 +74,7 @@ const Trade = () => {
                 всесторонний охват и успех.
               </p>
             </ContentBlock>
-            <ContentBlock className={styles.gridItem}>
+            <ContentBlock className={`${styles.gridItem} ${styles.gridItem2}`}>
               <h3 className={styles.stepTitle}>Безопасность</h3>
               <p className={styles.stepText}>
                 Благодаря нашему обширному опыту работы с криптовалютами мы

@@ -45,7 +45,6 @@ const OffersItemContent = ({
           <p>{price}</p>
           <p className={styles.currency}>RUB</p>
         </div>
-        
         <div className={styles.item3}>
           <div className={styles.limit}>
             <p className={styles.limitTitle}>Доступно</p>

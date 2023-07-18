@@ -9,6 +9,9 @@
   grid-template-rows: 70px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  @media (max-width: 1250px) {
+    display: none;
+  }
 }
 .title1 {
   grid-area: 1 / 1 / 2 / 2;

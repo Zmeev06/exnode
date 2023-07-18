@@ -7,6 +7,9 @@
   padding-top: 10px;
   margin-bottom: 20px;
   justify-content: space-between;
+  @media (max-width: 1250px) {
+    flex-direction: column;
+  }
 }
 
 .infoBlock {
@@ -14,7 +17,11 @@
   height: 544px;
   background-color: $darkViolet;
   border-radius: 10px;
-  padding: 20px
+  padding: 20px;
+  @media (max-width: 1250px) {
+   width: 329px;
+   height: fit-content;
+  }
 }
 
 .profile {
@@ -56,6 +63,11 @@
   border-radius: 10px;
   border: 1px solid $btnBlue;
   padding: 20px;
+  @media (max-width: 1250px) {
+    width: 329px;
+    height: fit-content;
+    margin-top: 23px;
+  }
 }
 
 .input {

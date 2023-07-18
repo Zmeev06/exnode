@@ -1,0 +1,61 @@
+@import '../../../stylesVariables/colors.scss';
+
+.bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: $bgModal;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+.main {
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  width: 710px;
+  height: 516px;
+  background-color: $bg;
+  border: 1px solid $btnBlue;
+  border-radius: 20px;
+  display: none;
+  padding: 26px 20px;
+}
+
+.active {
+  display: block;
+}
+
+.topBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cross {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.btn {
+  width: 140px;
+  height: 40px;
+  background-color: $btnBlue;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: .3s;
+  &:hover {
+    background-color: #ffffff00;
+    border: 1px solid $btnBlue;
+  }
+}

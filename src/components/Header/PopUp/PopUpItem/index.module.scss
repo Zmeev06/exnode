@@ -1,0 +1,26 @@
+@import "../../../../stylesVariables/colors.scss";
+
+.main {
+  width: 210px;
+  height: 76px;
+  padding: 10px;
+  display: flex;
+  &:hover {
+    background-color: $btnBlue;;
+  }
+}
+
+.imgBlock {
+  height: 76px;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 16px;
+  color: #fff;
+}
+
+.text {
+  font-size: 14px;
+  color: #fff;
+}

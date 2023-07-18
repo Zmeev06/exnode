@@ -44,7 +44,7 @@ const NewPayMethod = ({ setIsOpenModal }: NewPayMethodProps) => {
         />
         <div className={styles.popupIn__text}>№ карты</div>
         <div className={styles.popupIn__input}>
-          <input type="text" placeholder="____ ____ ____ ____" />
+          <input type="text" placeholder="____ ____ ____ ____" maxLength={16}/>
         </div>
         <div className={styles.popupIn__btn} onClick={() => {
           addMethod()

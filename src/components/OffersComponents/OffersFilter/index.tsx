@@ -3,6 +3,22 @@ import styles from "./index.module.scss";
 import plus from "../../../assets/icons/plus.svg";
 import filter from "../../../assets/icons/filter.svg";
 import { ReactComponent as Plus } from "../../../assets/icons/plusFilter.svg";
+import Select from "react-select";
+
+
+const payOptions = [
+  { label: 'Сбербанк', value: '1' },
+  { label: 'Тинькофф', value: '2' },
+  { label: 'Райфанзен', value: '3' },
+  { label: 'Альфабанк', value: '4' },
+  { label: 'Qiwi', value: '5' }
+]
+
+const filterOptions = [
+  { label: 'Лучшая цена', value: '1' },
+  { label: 'Новые', value: '2' },
+]
+
 
 const OffersFilters = () => {
   return (
@@ -15,30 +31,13 @@ const OffersFilters = () => {
             type="text"
             placeholder="Введите сумму"
           />
-          <select className={styles.summСurrency}>
-            <option value={"rub"}>RUB</option>
-            <option value={"eur"}>EUR</option>
-            <option value={"usd"}>USD</option>
-          </select>
         </div>
         <div className={styles.payment}>
           <p className={styles.summText}>Способ оплаты</p>
-          <select className={styles.select}>
-            <option value={"sber"} className={styles.option}>Сбербанк</option>
-            <option value={"tink"} className={styles.option}>Тинькофф</option>
-            <option value={"raif"} className={styles.option}>Райффайзен</option>
-            <option value={"alpha"} className={styles.option}>АльфаБанк</option>
-            <option value={"qiwi"} className={styles.option}>Qiwi</option>
-          </select>
+          <Select options={payOptions} classNames={{control : (state) => styles.select, menu: (state) => styles.menu, option: (state) => styles.option}} />
         </div>
         <div className={styles.filter}>
-          <select className={styles.select}>
-            <option value={""} disabled>
-              Фильтр
-            </option>
-            <option value={"sber"} className={styles.option}>Лучшая цена</option>
-            <option value={"tink"} className={styles.option}>Новые</option>
-          </select>
+        <Select options={filterOptions} classNames={{control : (state) => styles.select, menu: (state) => styles.menu, option: (state) => styles.option}} />
         </div>
         <div className={styles.btnBlock}>
           <div className={styles.newOfferBtn}>

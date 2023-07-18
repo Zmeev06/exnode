@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./index.module.scss";
 import ContentBlock from "../../../UI/ContentBlock";
-import { ReactComponent as Copy } from "../../../../assets/icons/copy.svg";
-import { ReactComponent as RollUp } from "../../../../assets/icons/FAQs/Button.svg";
 import HistoryTableItem from "./HistoryTableItem";
 
 const data = [

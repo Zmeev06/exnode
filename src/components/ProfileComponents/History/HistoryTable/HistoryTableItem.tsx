@@ -40,27 +40,47 @@ const HistoryTableItem = ({
             <h4 className={styles.saleTitle}>{type}</h4>
             <span className={styles.saleId}>{id}</span>
           </div>
+          <div className={styles.blockItemTopCenter}>
+            <span>{courseInCrypt}</span>
+          </div>
           <div>
             <RollUp className={`${isVisible && styles.blockItemBtn}`} />
           </div>
         </div>
-        {/* <p
-          className={`${styles.blockItemText} ${
-            isVisible && styles.blockItemTextVisible
-          }`}
-        >
-          ddd
-        </p> */}
         <div
           className={`${styles.blockItemBody} ${
             isVisible && styles.blockItemBodyVisible
           }`}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio odit
-          pariatur, nesciunt quam alias repellendus quidem quia ducimus ipsa
-          earum.
+          <div className={styles.blockItemBodyRow}>
+            <span className={styles.blockItemBodyRowLeft}>Сумма в фиате</span>
+            <span className={styles.blockItemBodyRowRight}>{sum}</span>
+          </div>
+          <div className={styles.blockItemBodyRow}>
+            <span className={styles.blockItemBodyRowLeft}>Курс</span>
+            <span className={styles.blockItemBodyRowRight}>{course}</span>
+          </div>
+          <div className={styles.blockItemBodyRow}>
+            <span className={styles.blockItemBodyRowLeft}>Дата</span>
+            <span className={styles.blockItemBodyRowRight}>{date}</span>
+          </div>
+          <div className={styles.blockItemBodyRow}>
+            <span className={styles.blockItemBodyRowLeft}>Контрагент</span>
+            <span className={styles.blockItemBodyRowRight}>{counterparty}</span>
+          </div>
+          <div className={styles.blockItemBodyRow}>
+            <span className={styles.blockItemBodyRowLeft}>Статус</span>
+            <span className={styles.blockItemBodyRowRight}>{status}</span>
+          </div>
+          <div>
+            <div className={styles.blockItemBodyRowOperationsTop}>
+              <span>{operations}</span> <Copy />
+            </div>
+            <button className={styles.operationsBtn}>К деталям</button>
+          </div>
         </div>
       </div>
+
       <div className={styles.itemBlock}>
         <div className={styles.item}>
           <h4 className={styles.saleTitle}>{type}</h4>

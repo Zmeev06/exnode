@@ -116,7 +116,7 @@
   }
 
   &Body {
-    max-height: 0;
+    height: 0;
     overflow: hidden;
     color: $lightPurpuleText;
     font-family: RobotoFlex;
@@ -134,8 +134,45 @@
 
     &Visible {
       transition: 0.6s;
-      max-height: 150px;
+      height: auto;
       margin-bottom: 10px;
+    }
+
+    &Row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+
+      &OperationsTop {
+        display: flex;
+        align-items: center;
+        margin-bottom: 4px;
+
+        svg {
+          margin-left: 10px;
+        }
+      }
+
+      &Left {
+        color: $lightVioletText;
+        font-family: RobotoFlex;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 145%;
+      }
+
+      &Right {
+        color: $lightPurpuleText;
+        font-family: RobotoFlex;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 145%;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 

@@ -1,0 +1,79 @@
+@import "../../../../stylesVariables/colors.scss";
+
+.main {
+  width: 100%;
+  @media (max-width: 1250px) {
+    // display: none;
+  }
+}
+
+.filter {
+  display: grid;
+  grid-template-columns: 100px 130px 46px 201px 100px 100px 100px 110px;
+  justify-content: space-between;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-top: 15px;
+  background-color: #29144bbe;
+
+  &Item {
+    color: $lightPurpuleText;
+    font-family: RobotoFlex;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+.itemBlock {
+  margin-top: 10px;
+  padding: 0 10px;
+  display: grid;
+  grid-template-columns: 100px 130px 46px 201px 100px 100px 100px 110px;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid $btnBlue;
+  padding-bottom: 4px;
+}
+
+.item {
+  color: $lightPurpuleText;
+  font-family: RobotoFlex;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 145%;
+}
+
+.saleTitle {
+  color: $lightViolet;
+  font-family: RobotoFlex;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 6px;
+}
+
+.operations {
+  &Top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+  &Btn {
+    border-radius: 8px;
+    background-color: $btnBlue;
+    padding: 10px 20px;
+    width: 100%;
+    min-width: 120px;
+    color: $lightPurpuleText;
+    font-family: RobotoFlex;
+    font-size: 16px;
+    font-weight: 600;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

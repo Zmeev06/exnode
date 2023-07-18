@@ -1,27 +1,16 @@
 import { ApiClient } from "./Client";
 
-export const getOffersByType = async (type: number, token: string, currency: number) => {
+export const getOffersByType = async (type: number, token: string) => {
   return await ApiClient({
-    url: `offer?type=${type}&currency=${currency}`,
+    url: `offer?type=${type}`,
   });
 };
 
-export const createOffer = async(type: number, token: string, currency: number, limit: number, price: number, paymentMethod: number, limitStart: number, limitEnd: number, requisites: string) => {
+export const getAllSellerOrders = async (token: string) => {
   return await ApiClient({
-    url: "offer/create",
-    method: "POST",
+    url: `order/seller`,
     headers: {
       Authorization: `${token}`,
-    },
-    data: {
-      type,
-      currency, 
-      limit,
-      price, 
-      payment_method: paymentMethod, 
-      limit_start: limitStart, 
-      limit_end: limitEnd, 
-      requisites
     },
   });
 };

@@ -87,7 +87,12 @@
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 15px;
+    width: fit-content;
     cursor: pointer;
+    transition: .3s;
+    &:hover {
+      color: $btnBlue
+    }
 
     &:last-child {
       margin-bottom: 0;

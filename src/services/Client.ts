@@ -12,7 +12,7 @@ interface Client {
     | undefined;
 }
 
-const BASE_URL = 'http://89.108.81.250/api/'
+const BASE_URL = 'https://api.dcx-p2p.com/'
 
 
 const REQUEST_TIMEOUT = 5000;

@@ -12,7 +12,7 @@ interface Client {
     | undefined;
 }
 
-const BASE_URL = 'https://api.dcx-p2p.com/'
+const BASE_URL = 'https://api.dcx-p2p.com/api/'
 
 
 const REQUEST_TIMEOUT = 5000;

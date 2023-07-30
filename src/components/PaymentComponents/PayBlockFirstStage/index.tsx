@@ -44,10 +44,10 @@ const PayBlockFirstStage = ({
   return (
     <>
       <PayBlock
-        header="Подтвердитеeeee информацию об ордере"
-        sum={sum}
-        priceRub={price}
-        priceUSDT={price}
+        header="Подтвердите информацию об ордере"
+        sum={order.data.sum}
+        priceRub={order.data.price}
+        priceUSDT={order.data.price}
       >
         <p className={styles.title}>
           Переведите средства на счет продавца по реквизитам

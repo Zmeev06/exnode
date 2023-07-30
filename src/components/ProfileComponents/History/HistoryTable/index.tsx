@@ -1,45 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import ContentBlock from "../../../UI/ContentBlock";
 import HistoryTableItem from "./HistoryTableItem";
-
-const data = [
-  {
-    type: "Продажа",
-    id: "00000000",
-    sum: "5,000.00 RUB",
-    course: "00.00",
-    courseInCrypt: "55.05 USDT",
-    date: "04.07.2023 00:23:35",
-    counterparty: "_UMBRELLA_",
-    status: "Отменена",
-    operations: "00000000",
-  },
-  {
-    type: "Продажа",
-    id: "00000000",
-    sum: "5,000.00 RUB",
-    course: "00.00",
-    courseInCrypt: "55.05 USDT",
-    date: "04.07.2023 00:23:35",
-    counterparty: "_UMBRELLA_",
-    status: "Равершена",
-    operations: "00000000",
-  },
-  {
-    type: "Продажа",
-    id: "00000000",
-    sum: "5,000.00 RUB",
-    course: "00.00",
-    courseInCrypt: "55.05 USDT",
-    date: "04.07.2023 00:23:35",
-    counterparty: "_UMBRELLA_",
-    status: "Отменена",
-    operations: "00000000",
-  },
-];
+import { getHistory } from "../../../../services/profileServices";
 
 const HistoryTable = () => {
+  const [history, setHistory] = useState<any[]>();
+  const token = localStorage.getItem("token")?.replace(/"/g, "") || "";
+  const getHistoryData = async () => {
+    const { data } = await getHistory(token);
+    setHistory(data);
+  };
+  useEffect(() => {
+    getHistoryData();
+  }, []);
   return (
     <ContentBlock className={styles.main}>
       <div className={styles.filter}>
@@ -52,11 +26,7 @@ const HistoryTable = () => {
         <p className={styles.filterItem}>Статус</p>
         <p className={styles.filterItem}>Операции</p>
       </div>
-      <div>
-        {data.map((el) => (
-          <HistoryTableItem {...el} />
-        ))}
-      </div>
+      <div>{history && history.map((el) => <HistoryTableItem {...el} />)}</div>
     </ContentBlock>
   );
 };

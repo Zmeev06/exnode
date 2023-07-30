@@ -56,10 +56,7 @@ export const payOutMethod = async (
   });
 };
 
-export const payInMethod = async (
-  token: string,
-  currency: number,
-) => {
+export const payInMethod = async (token: string, currency: number) => {
   return await ApiClient({
     method: "POST",
     url: "pay-in/create",
@@ -67,8 +64,16 @@ export const payInMethod = async (
       Authorization: `${token}`,
     },
     data: {
-      currency
+      currency,
     },
   });
 };
 
+export const getHistory = async (token: string) => {
+  return await ApiClient({
+    url: "order/seller",
+    headers: {
+      Authorization: `${token}`,
+    },
+  });
+};

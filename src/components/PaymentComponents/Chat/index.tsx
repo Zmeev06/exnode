@@ -16,9 +16,11 @@ const Chat = ({ myName }: ChatProps) => {
   const [messages, setMessages] = useState<IMessages>();
   const pathname = useLocation().pathname;
 
-
   const getAllMessages = async () => {
-    const { data } = await getMessages(+pathname.split('/')[3], token.replace(/"/g, ""));
+    const { data } = await getMessages(
+      +pathname.split("/")[3],
+      token.replace(/"/g, "")
+    );
     setMessages(data);
   };
 

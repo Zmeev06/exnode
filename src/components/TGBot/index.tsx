@@ -19,7 +19,7 @@ const TGBot = () => {
           <img className={styles.img} src={FirstiPhone} alt="" />
         </div>
         <div className={styles.bottomImg}>
-          <img className={styles.img} src={SecondiPhone} alt="" />
+          <img className={`${styles.img} ${styles.ebanytayaImg}`} src={SecondiPhone} alt="" />
         </div>
         <div className={styles.topImg}>
           <img className={styles.img} src={ThirdiPhone} alt="" />

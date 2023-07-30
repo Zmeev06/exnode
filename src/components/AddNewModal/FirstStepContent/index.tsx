@@ -2,14 +2,30 @@ import React, { useState } from "react";
 import styles from "./index.module.scss";
 import arrow from "../../../assets/icons/arrow-right.svg";
 import ContentBlock from "../../UI/ContentBlock";
+import Select from "react-select";
 
 interface FirstStepContentModalProps {
   setCurrency: (currency: number) => void;
   price: number;
-  setPrice: (price: number ) => void;
+  setPrice: (price: number) => void;
 }
 
-const FirstStepContentModal = ({setCurrency, price, setPrice}: FirstStepContentModalProps) => {
+const firstOptions = [
+  { label: "RUB", value: "1" },
+  { label: "RUB", value: "2" },
+  { label: "RUB", value: "3" },
+];
+const secondOptions = [
+  { label: "USDT", value: "1" },
+  { label: "BTC", value: "2" },
+  { label: "TRX", value: "3" },
+];
+
+const FirstStepContentModal = ({
+  setCurrency,
+  price,
+  setPrice,
+}: FirstStepContentModalProps) => {
   const [type, setType] = useState("notFix");
   const [percents, setPercents] = useState(111);
   return (
@@ -17,20 +33,22 @@ const FirstStepContentModal = ({setCurrency, price, setPrice}: FirstStepContentM
       <div className={styles.inputs}>
         <div>
           <p className={styles.title}>Актив</p>
-          <select className={styles.select} onChange={(e) => setCurrency(+e.target.value)}>
-            <option value={1}>USDT</option>
-            <option value={2}>BTC</option>
-            <option value={3}>TRX</option>
-          </select>
+          <Select
+            options={secondOptions}
+            classNames={{ container: (state) => styles.select }}
+            classNamePrefix="react-select"
+            placeholder={""}
+          />
         </div>
         <img src={arrow} alt="" />
         <div className={styles.input}>
           <p className={styles.title}>За фиат</p>
-          <select className={`${styles.select} ${styles.currency}`}>
-            <option value={"rub"}>RUB</option>
-            <option value={"rub"}>RUB</option>
-            <option value={"rub"}>RUB</option>
-          </select>
+          <Select
+            options={firstOptions}
+            classNames={{ container: (state) => styles.select }}
+            classNamePrefix="react-select"
+            placeholder={""}
+          />
         </div>
       </div>
       <div className={styles.content}>
@@ -79,7 +97,7 @@ const FirstStepContentModal = ({setCurrency, price, setPrice}: FirstStepContentM
               <p
                 className={styles.controlls}
                 onClick={() => {
-                  price > 0 && setPrice(price-0.1);
+                  price > 0 && setPrice(price - 0.1);
                   price < 0 && setPrice(0);
                 }}
               >
@@ -128,7 +146,6 @@ const FirstStepContentModal = ({setCurrency, price, setPrice}: FirstStepContentM
           </ContentBlock>
         )}
       </div>
-      
     </div>
   );
 };

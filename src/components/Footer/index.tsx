@@ -37,6 +37,7 @@ const Footer = () => {
   return (
     <div className={styles.root}>
       <div className={styles.contactBlock}>
+      
         <div>
           <img src={Logo} alt="" className={styles.logo} />
         </div>
@@ -57,6 +58,14 @@ const Footer = () => {
           <FooterItem title={el.title} gridItems={el.gridItems} />
         ))}
       </div>
+      <a href="https://freekassa.ru" target="_blank" rel="noopener noreferrer" className={styles.fk}>
+        <img
+          src="https://cdn.freekassa.ru/banners/small-red-1.png"
+          title="Прием платежей на сайте для физических лиц и т.д."
+          alt=""
+          className={styles.fk}
+        />
+      </a>
     </div>
   );
 };

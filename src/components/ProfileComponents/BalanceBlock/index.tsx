@@ -39,11 +39,17 @@ const BalanceBlock = ({ balance }: BalanceBlockProps) => {
           <p className={styles.frozen}>Заморожено: 0.00 USDT</p>
         </div>
         <div className={styles.btnsBlock}>
-          <div className={styles.btnBlock}>
+          <div
+            className={styles.btnBlock}
+            onClick={() => setIsOpenPayInModal(true)}
+          >
             <img src={arrow} alt="" className={`${styles.img}`} />
             <p className={styles.btnText}>Ввод</p>
           </div>
-          <div className={styles.btnBlock}>
+          <div
+            className={styles.btnBlock}
+            onClick={() => setIsOpenPayOutModal(true)}
+          >
             <img src={arrow2} alt="" className={`${styles.img}`} />
             <p className={styles.btnText}>Вывод</p>
           </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import OffersItem from "../OffersItem";
 import { IOfferData } from "../../../interfaces/serviceInterfaces";
@@ -9,6 +9,16 @@ interface OffersItemsProps {
 }
 
 const OffersItems = ({ data }: OffersItemsProps) => {
+  const [status, setStatus] = useState(false);
+  const token = localStorage.getItem("token")?.replace(/"/g, "") || "";
+
+  const getProfileFunc = async () => {
+    const { data } = await getProfile(token);
+    data !== "isError" && setStatus(true);
+  };
+  useEffect(() => {
+    getProfileFunc();
+  });
   return (
     <div className={styles.main}>
       <div className={styles.titles}>
@@ -34,6 +44,8 @@ const OffersItems = ({ data }: OffersItemsProps) => {
             id={item.id}
             paymentMethod={item.payment_method}
             key={index}
+            status={status}
+            setStatus={setStatus}
           />  
         ))}
       </div>

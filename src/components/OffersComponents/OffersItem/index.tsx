@@ -14,6 +14,8 @@ interface OffersItemProps {
   currency: number;
   id: number;
   paymentMethod: number;
+  status: boolean;
+  setStatus: (status: boolean) => void;
 }
 
 const OffersItem = ({
@@ -24,19 +26,13 @@ const OffersItem = ({
   currency,
   id,
   paymentMethod,
+  status,
+  setStatus,
 }: OffersItemProps) => {
   const navigate = useNavigate();
-  const [status, setStatus] = useState(false);
-  const token = localStorage.getItem("token")?.replace(/"/g, "") || "";
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const getProfileFunc = async () => {
-    const { data } = await getProfile(token);
-    data !== "isError" && setStatus(true);
-  };
-  useEffect(() => {
-    getProfileFunc();
-  });
+
   return (
     <>
       {!isOpen ? (

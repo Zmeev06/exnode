@@ -25,7 +25,7 @@ const Chat = ({ myName }: ChatProps) => {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => getAllMessages(), 3000);
+    const interval = setInterval(() => getAllMessages(), 30);
     return () => {
       clearInterval(interval);
     };

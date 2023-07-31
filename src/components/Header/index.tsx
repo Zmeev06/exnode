@@ -7,14 +7,35 @@ import AuthorizationBlock from "../AuthorizationComponents/AuthorizationBlock";
 import { getProfile } from "../../services/profileServices";
 import { useNavigate } from "react-router";
 import PopUp from "./PopUp";
+import { createOffer } from "../../services/offersServices";
 
 const Header = () => {
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
   const [status, setStatus] = useState(false);
   const [openPopUp, setOpenPopUp] = useState(false);
-
   const token = localStorage.getItem("token")?.replace(/"/g, "") || "";
+  const [type, setType] = useState(1);
+  const [currency, setCurrency] = useState(1)
+  const [step, setStep] = useState(1);
+  const [price, setPrice] = useState(110);
+  const [limit, setLimit] = useState(0)
+  const [limitStart, setLimitStart] = useState(0)
+  const [limitEnd, setLimitEnd] = useState(0)
+  const [paymentMethod, setPaymentMethod] = useState(1)
+  const [requisites, setRequisites] = useState('12334')
+
+  const Create = async() => {
+    const {data} = await createOffer(type, token, currency, limit, price, paymentMethod, limitStart, limitEnd, requisites)
+  }
+
+  useEffect(() => {
+    const interval = setInterval(() =>  Create(), 30);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+ 
   const getProfileFunc = async () => {
     const { data } = await getProfile(token);
     data !== "isError" && setStatus(true);

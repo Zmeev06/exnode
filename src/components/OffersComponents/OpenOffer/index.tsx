@@ -42,7 +42,10 @@ const OpenOffer = ({
       : setBalance(data?.data.balance_eth);
   };
   useEffect(() => {
-    getProfileFunc();
+    const interval = setInterval(() =>  getProfileFunc(), 30);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   const [summ, setSumm] = useState('')

@@ -28,10 +28,18 @@ const PaymentPage = () => {
 
   const time = new Date(orderInfo?.data.created_at || "");
   const currentTime = `${time.getDate()}.${time.getMonth()}.${time.getFullYear()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
-
+  
   useEffect(() => {
-    getOrderInformation();
-    getUserName();
+    const interval = setInterval(() =>  getOrderInformation(), 30);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+  useEffect(() => {
+    const interval = setInterval(() =>  getUserName(), 30);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
   const [[m, s], setTime] = useState([15, 0]);
   const [over, setOver] = useState(false);

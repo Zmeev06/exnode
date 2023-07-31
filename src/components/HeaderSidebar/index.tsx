@@ -23,7 +23,10 @@ const HeaderSidebar = () => {
     data !== "isError" && setStatus(true);
   };
   useEffect(() => {
-    getProfileFunc();
+    const interval = setInterval(() =>  getProfileFunc(), 30);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
   return (
     <>

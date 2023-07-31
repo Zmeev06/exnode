@@ -18,8 +18,11 @@ const OffersBlock = () => {
   };
 
   useEffect(() => {
-    getOffers();
-  }, [offersType]);
+    const interval = setInterval(() =>  getOffers(), 30);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
   return (
     <Container>
       <div className={styles.main}>

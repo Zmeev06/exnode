@@ -22,7 +22,10 @@ const Profile = () => {
     setProfile(data);
   };
   useEffect(() => {
-    getProfileData();
+    const interval = setInterval(() =>  getProfileData(), 30);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (

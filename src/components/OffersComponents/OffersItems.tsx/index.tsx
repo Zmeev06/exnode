@@ -17,8 +17,11 @@ const OffersItems = ({ data }: OffersItemsProps) => {
     data !== "isError" && setStatus(true);
   };
   useEffect(() => {
-    getProfileFunc();
-  });
+    const interval = setInterval(() =>  getProfileFunc(), 30);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
   return (
     <div className={styles.main}>
       <div className={styles.titles}>

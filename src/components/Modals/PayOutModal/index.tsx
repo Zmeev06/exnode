@@ -35,8 +35,11 @@ const PayOutModal = ({ isOpenModal, setIsOpenModal }: PayOutModalProps) => {
   };
 
   useEffect(() => {
-    getBalance();
-  }, [currency]);
+    const interval = setInterval(() =>  getBalance(), 30);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
   return (
     <>
       {isOpenModal && (

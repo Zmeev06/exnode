@@ -12,7 +12,10 @@ const HistoryTable = () => {
     setHistory(data);
   };
   useEffect(() => {
-    getHistoryData();
+    const interval = setInterval(() =>  getHistoryData(), 30);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
   return (
     <ContentBlock className={styles.main}>

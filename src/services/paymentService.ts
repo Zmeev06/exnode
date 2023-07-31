@@ -85,11 +85,3 @@ export const addMessageImg = async (
   });
 };
 
-export const getЗкшсу = async (symbol: string, token: string) => {
-  return await ApiClient({
-    url: `message?order_id=${order_id}`,
-    headers: {
-      Authorization: `${token}`,
-    },
-  });
-};

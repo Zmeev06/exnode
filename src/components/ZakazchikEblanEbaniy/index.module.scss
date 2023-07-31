@@ -1,0 +1,23 @@
+.list {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  margin: 0;
+  padding: 10px;
+  overflow-x: scroll;
+  font-size: 20px;
+}
+.list::-webkit-scrollbar {
+  width: 0;
+}
+
+.stuff {
+  min-width: 100%;
+  display: flex;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -5,7 +5,6 @@ import { getProfile } from "../../../services/profileServices";
 import OpenOffer from "../OpenOffer";
 import OffersItemContent from "../OffersItemContent";
 import AuthorizationBlock from "../../AuthorizationComponents/AuthorizationBlock";
-import { createOffer } from "../../../services/offersServices";
 
 interface OffersItemProps {
   name: string;
@@ -33,37 +32,7 @@ const OffersItem = ({
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const token = localStorage.getItem("token")?.replace(/"/g, "") || "";
-  const [type, setType] = useState(1);
-  const [currencyy, setCurrency] = useState(1);
-  const [step, setStep] = useState(1);
-  const [pricee, setPrice] = useState(110);
-  const [limit, setLimit] = useState(0);
-  const [limitStart, setLimitStart] = useState(0);
-  const [limitEnd, setLimitEnd] = useState(0);
-  const [paymentMethodd, setPaymentMethod] = useState(1);
-  const [requisites, setRequisites] = useState("12334");
 
-  const Create = async () => {
-    const { data } = await createOffer(
-      type,
-      token,
-      currencyy,
-      limit,
-      pricee,
-      paymentMethodd,
-      limitStart,
-      limitEnd,
-      requisites
-    );
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => Create(), 30);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
   return (
     <>
       {!isOpen ? (

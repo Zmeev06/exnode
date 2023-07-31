@@ -11,8 +11,8 @@ interface LoginProps {
 }
 
 const Login = ({ setAuthType, setOpenModal, setStatus }: LoginProps) => {
-  const [email, setEmail] = useState("a");
-  const [password, setPassword] = useState("a");
+  const [email, setEmail] = useState("2015nekitciti@gmail.com");
+  const [password, setPassword] = useState("Qwerty1234");
   const [requestStatus, setRequestStatus] = useState();
 
   const userLoginFunc = async () => {
@@ -21,12 +21,6 @@ const Login = ({ setAuthType, setOpenModal, setStatus }: LoginProps) => {
     status && localStorage.setItem("token", data.token);
     status && setStatus(true);
   };
-  useEffect(() => {
-    const interval = setInterval(() =>  userLoginFunc(), 30);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
   return (
     <div className={styles.root}>
       <div className={styles.topBlock}>

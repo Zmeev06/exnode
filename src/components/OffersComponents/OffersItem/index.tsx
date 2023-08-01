@@ -52,6 +52,7 @@ const OffersItem = ({
           status={status}
           setIsOpenModal={setIsOpenModal}
         />
+        
       ) : (
         <OpenOffer
           price={price}
